@@ -8,7 +8,7 @@ const Car = (response) => {
     const response = await axios.get('http://localhost:3001/car/all')
     setCarList(response.data.cars)
   }
-  const getAllComments = async () => {
+  const getAllComments = async (comments) => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data.comments)
   }
