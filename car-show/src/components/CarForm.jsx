@@ -24,9 +24,8 @@ const CarForm = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}`, formState)
+    await axios.post(`${BASE_URL}cars/newcar`, formState)
     setFormState(initialState)
-    props.getCars()
   }
 
   return (
