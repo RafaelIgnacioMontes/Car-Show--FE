@@ -9,15 +9,17 @@ const Car = (response) => {
   const getAllCars = async () => {
     const response = await axios.get('http://localhost:3001/cars/all')
     setCarList(response.data)
-    console.log(response)
+    // console.log(response)
   }
   const getAllComments = async (comments) => {
     const response = await axios.get('http://localhost:3001/comment/all')
-    setComments(response.data.comments)
+    setComments(response.data)
+    console.log(response)
   }
 
   useEffect(() => {
     getAllCars()
+    getAllComments()
   }, [])
   return (
     <div>

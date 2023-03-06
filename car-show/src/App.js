@@ -1,18 +1,21 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import Home from './components/Home'
 import Register from './components/Register'
 import About from './components/About'
 import SignIn from './components/SignIn'
 import { CheckSession } from './services/Auth'
-import './App.css'
 
 function App() {
   const [user, setUser] = useState(null)
-
   const handleLogOut = () => {
+    //Reset all auth related state and clear localStorage
     setUser(null)
+    // toggleAuthenticated(false)
     localStorage.clear()
   }
 
@@ -23,7 +26,7 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-
+    // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
     }
