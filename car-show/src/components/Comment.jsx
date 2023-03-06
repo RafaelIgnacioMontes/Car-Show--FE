@@ -8,4 +8,10 @@ const Comment = (reponse) => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(reponse.data.comments)
   }
+
+  return (
+    <div></div>
+  )
 }
+
+export default Comment

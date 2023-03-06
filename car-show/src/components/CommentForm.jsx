@@ -25,7 +25,7 @@ const CommentForm = (props) => {
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmit} className="comment-form">
-      <label htmlFor="content"><Comment></Comment></label>
+      <label htmlFor="content">Comments</label>
         <textarea
           type="text"
           id="content"

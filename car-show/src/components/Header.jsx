@@ -6,8 +6,8 @@ const Header = ({ user, handleLogOut }) => {
   if (user) {
     userOptions = (
       <nav>
-        <p>Welcome {user.email}!</p>
-        <Link to="/">Feed</Link>
+        {/* <p>Welcome {user.email}!</p> */}
+        {/* <Link to="/">Feed</Link> */}
         <Link onClick={handleLogOut} to="/">
           Sign Out
         </Link>
@@ -16,7 +16,7 @@ const Header = ({ user, handleLogOut }) => {
   }
   const publicOptions = (
     <nav>
-      <Link to="/">Home</Link>
+      {/* <Link to="/">Home</Link> */}
       <Link to="/register">Register</Link>
       <Link to="/signin">Sign In</Link>
     </nav>
@@ -48,9 +48,9 @@ const Header = ({ user, handleLogOut }) => {
             </div>
 
             <div className="registerNav">
-              <NavLink to="/register" className="registerLink">
+              {/* <NavLink to="/register" className="registerLink">
                 Register
-              </NavLink>
+              </NavLink> */}
             </div>
 
             <div className="registerNav">
