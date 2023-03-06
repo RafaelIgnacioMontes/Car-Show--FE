@@ -48,6 +48,29 @@ header {
   transform: translateY(10px);
 }
 
+.registerNav:hover {
+  transform: scale(1.1);
+}
+
+.registerNav:hover ~ .registerNav {
+  transform: translateY(10px);
+}
+
+.signInNav:hover {
+  transform: scale(1.1);
+}
+
+.signInNav:hover ~ .signInNav {
+  transform: translateY(10px);
+}
+.myPageNav:hover {
+  transform: scale(1.1);
+}
+
+.myPageNav:hover ~ .myPageNav {
+  transform: translateY(10px);
+}
+
 .homeAbout a {
   padding: 1vh 1vw;
   color: beige;
@@ -128,4 +151,8 @@ section img {
   height: 7vh;
   width: 5vw;
   border-radius: 20%;
+}
+
+.welcomemessage {
+  color: beige;
 }
