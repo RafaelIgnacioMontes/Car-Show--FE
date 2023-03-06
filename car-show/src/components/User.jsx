@@ -1,21 +1,26 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Car from './Car'
-import { useParams } from ''
 
-const User = ({ user }) => {
+const User = ({ user, token }) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  }
+
   const [userCarList, setUserCarList] = useState([])
 
-  const getAllCars = async ({ user }) => {
-    let userId = useParams()
-    const cars = await axios.get(`http://localhost:3001/cars/user/${userId}`)
+  const getAllCars = async () => {
+    const cars = await axios.get(
+      `http://localhost:3001/cars/user/${user.id}`,
+      config
+    )
+
     setUserCarList(cars.data)
-    console.log(userId)
   }
   useEffect(() => {
     getAllCars()
   }, [])
-
+  console.log(token)
   return (
     <div>
       <h1>Test</h1>
