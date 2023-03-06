@@ -36,7 +36,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home user={user} />} />
-          <Route path="/User" element={<User />} />
+          <Route path="/User" element={<User user={user} />} />
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
