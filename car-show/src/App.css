@@ -119,11 +119,14 @@ header nav a {
   padding-top: 8vh;
   padding-bottom: 8vh;
 }
-footer{
+.team{
   display: flex;
   justify-content: space-evenly;
 }
-footer img {
+.team h5{
+  text-align: center;
+}
+section img {
   margin-top: 1.4vh;
   height: 7vh;
   width: 5vw;

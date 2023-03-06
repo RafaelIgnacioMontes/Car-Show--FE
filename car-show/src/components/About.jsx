@@ -20,11 +20,12 @@ const About = () => {
             className="about-img"
             src="https://media1.giphy.com/media/5QTKDImCF2wOnJpRFs/giphy.gif?cid=ecf05e47az7tns9bvxy7h3x8ngvm9yb3yyte4rkov7ga8e67&rid=giphy.gif&ct=g"
             alt="cars"
-          ></img>
+            ></img>
         </div>
       </div>
-      <footer>
+      <section className='team'>
         <div className='rafael-socials'>
+          <h5>Rafael Ignacio Montes</h5>
           <img src="https://media.licdn.com/dms/image/D5635AQEvqpmkGoij3g/profile-framedphoto-shrink_400_400/0/1675885133222?e=1678719600&v=beta&t=v7baG86VfipiLa0-1ouWzz9bqLQiZUkm_-EN3aSXLrE" alt='rafael'></img>
         <Link to="https://github.com/RafaelIgnacioMontes">
           <img
@@ -38,6 +39,7 @@ const About = () => {
         </Link>
         </div>
         <div className='clifton-socials'>
+          <h5>Clifton Lucas</h5>
           <img src="https://media.licdn.com/dms/image/D5603AQFQPrXQephSlg/profile-displayphoto-shrink_400_400/0/1668648670371?e=1683763200&v=beta&t=vPbde9pO1t0JvnTnCh1loItL-lIQmhxICSQhP-aD-hs" alt='clifton'></img>
         <Link to="https://github.com/Cliftonlucas1">
           <img
@@ -51,6 +53,7 @@ const About = () => {
         </Link>
         </div>
         <div className='mike-socials'>
+          <h5>Michael Durando</h5>
           <img src="https://media.licdn.com/dms/image/D4E35AQGv8OsMUTcj9Q/profile-framedphoto-shrink_400_400/0/1675889709091?e=1678730400&v=beta&t=GYNM-Dn7_IhXo6kU0rjnct3d06zkyY9QEaMWXe-ueGI" alt='mike'></img>
         <Link to="https://github.com/mjdurando82">
           <img
@@ -63,7 +66,7 @@ const About = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" alt='linkedin'></img>
         </Link>
         </div>
-      </footer>
+      </section>
     </div>
   )
 }
