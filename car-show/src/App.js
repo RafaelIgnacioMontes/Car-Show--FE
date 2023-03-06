@@ -7,6 +7,7 @@ import Register from './components/Register'
 import About from './components/About'
 import SignIn from './components/SignIn'
 import { CheckSession } from './components/services/Auth'
+import User from './components/User'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -35,7 +36,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home user={user} />} />
-
+          <Route path="/User" element={<User />} />
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
