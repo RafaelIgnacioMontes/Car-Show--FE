@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
+import { RegisterUser } from './services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   let navigate = useNavigate()
   const initialState = {
+    userName: '',
     name: '',
     email: '',
     password: '',
@@ -31,6 +32,17 @@ const Register = () => {
     <div className="signin col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="userName">Username</label>
+            <input
+              onChange={handleChange}
+              name="userName"
+              type="text"
+              placeholder="Username"
+              value={formValues.userName}
+              required
+            />
+          </div>
           <div className="input-wrapper">
             <label htmlFor="name">Name</label>
             <input
