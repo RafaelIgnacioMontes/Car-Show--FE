@@ -1,5 +1,5 @@
 body {
-margin-top: 9vh;
+  margin-top: 9vh;
 }
 header {
   background-color: #141265;
@@ -28,23 +28,23 @@ header {
   transform: scale(1.06);
 }
 
-.logoImage:hover~.logoImage {
+.logoImage:hover ~ .logoImage {
   transform: translateY(10px);
 }
 
 .homeNav:hover {
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
-.homeNav:hover~.homeNav {
+.homeNav:hover ~ .homeNav {
   transform: translateY(10px);
 }
 
 .aboutNav:hover {
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
-.aboutNav:hover~.aboutNav {
+.aboutNav:hover ~ .aboutNav {
   transform: translateY(10px);
 }
 
@@ -66,8 +66,6 @@ header {
   font-weight: 600;
   text-decoration: none;
 }
-
-
 
 .homeAbout {
   display: flex;
@@ -99,7 +97,6 @@ header nav a {
   border-radius: 5px;
 }
 
-
 .logoTitle {
   display: flex;
   flex-wrap: wrap;
@@ -119,11 +116,11 @@ header nav a {
   padding-top: 8vh;
   padding-bottom: 8vh;
 }
-.team{
+.team {
   display: flex;
   justify-content: space-evenly;
 }
-.team h5{
+.team h5 {
   text-align: center;
 }
 section img {

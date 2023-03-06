@@ -3,7 +3,9 @@ import axios from 'axios'
 
 const Car = (response) => {
   const [carList, setCarList] = useState([])
+
   const [comments, setComments] = useState([])
+
   const getAllCars = async () => {
     const response = await axios.get('http://localhost:3001/cars/all')
     setCarList(response.data)
