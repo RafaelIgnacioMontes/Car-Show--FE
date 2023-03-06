@@ -18,7 +18,7 @@ const About = () => {
         <div>
           <img
             className="about-img"
-            src="https://media.istockphoto.com/id/139896176/photo/classic-car-cruising-2.jpg?s=612x612&w=0&k=20&c=78YwjtTUzihTLYNikxPtIaYxPNiXCDxZ2whx8jvrvjk="
+            src="https://media1.giphy.com/media/5QTKDImCF2wOnJpRFs/giphy.gif?cid=ecf05e47az7tns9bvxy7h3x8ngvm9yb3yyte4rkov7ga8e67&rid=giphy.gif&ct=g"
             alt="cars"
           ></img>
         </div>
@@ -51,7 +51,7 @@ const About = () => {
         </Link>
         </div>
         <div className='mike-socials'>
-          <img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png" alt='mike'></img>
+          <img src="https://media.licdn.com/dms/image/D4E35AQGv8OsMUTcj9Q/profile-framedphoto-shrink_400_400/0/1675889709091?e=1678730400&v=beta&t=GYNM-Dn7_IhXo6kU0rjnct3d06zkyY9QEaMWXe-ueGI" alt='mike'></img>
         <Link to="https://github.com/mjdurando82">
           <img
             className="mike-github"

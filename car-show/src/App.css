@@ -1,9 +1,16 @@
+body {
+margin-top: 9vh;
+}
 header {
   background-color: #141265;
-  display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 3em;
+  height: 3.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
 }
 
 .homeAbout {
@@ -102,4 +109,23 @@ header nav a {
   max-width: 200vw;
   max-height: 20vh;
 }
-
+.about-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50vh;
+  width: 40vw;
+  border-radius: 40%;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+}
+footer{
+  display: flex;
+  justify-content: space-evenly;
+}
+footer img {
+  margin-top: 1.4vh;
+  height: 7vh;
+  width: 5vw;
+  border-radius: 20%;
+}
