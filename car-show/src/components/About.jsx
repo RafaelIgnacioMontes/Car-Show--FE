@@ -25,42 +25,42 @@ const About = () => {
       </div>
       <footer>
         <div className='rafael-socials'>
-          <img src="https://media.licdn.com/dms/image/D5635AQEvqpmkGoij3g/profile-framedphoto-shrink_400_400/0/1675885133222?e=1678719600&v=beta&t=v7baG86VfipiLa0-1ouWzz9bqLQiZUkm_-EN3aSXLrE"></img>
+          <img src="https://media.licdn.com/dms/image/D5635AQEvqpmkGoij3g/profile-framedphoto-shrink_400_400/0/1675885133222?e=1678719600&v=beta&t=v7baG86VfipiLa0-1ouWzz9bqLQiZUkm_-EN3aSXLrE" alt='rafael'></img>
         <Link to="https://github.com/RafaelIgnacioMontes">
           <img
             className="rafael-github"
-            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt='github'
             ></img>
         </Link>
         <Link to="https://www.linkedin.com/in/rafael-montes-9040491a5/">
           <img className='rafael-linkedin'
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"></img>
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" alt='linkedin'></img>
         </Link>
         </div>
         <div className='clifton-socials'>
-          <img src="https://media.licdn.com/dms/image/D5603AQFQPrXQephSlg/profile-displayphoto-shrink_400_400/0/1668648670371?e=1683763200&v=beta&t=vPbde9pO1t0JvnTnCh1loItL-lIQmhxICSQhP-aD-hs"></img>
+          <img src="https://media.licdn.com/dms/image/D5603AQFQPrXQephSlg/profile-displayphoto-shrink_400_400/0/1668648670371?e=1683763200&v=beta&t=vPbde9pO1t0JvnTnCh1loItL-lIQmhxICSQhP-aD-hs" alt='clifton'></img>
         <Link to="https://github.com/Cliftonlucas1">
           <img
             className="clifon-github"
-            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt='github'
             ></img>
         </Link>
         <Link to="https://www.linkedin.com/in/clifton-lucas-b80540121/">
           <img className='clifton-linkedin'
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"></img>
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" alt='linkein'></img>
         </Link>
         </div>
         <div className='mike-socials'>
-          <img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png"></img>
+          <img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png" alt='mike'></img>
         <Link to="https://github.com/mjdurando82">
           <img
             className="mike-github"
-            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt='github'
             ></img>
         </Link>
         <Link to="https://www.linkedin.com/in/michael-durando-101050138/">
           <img className='mike-linkedin'
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"></img>
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" alt='linkedin'></img>
         </Link>
         </div>
       </footer>
