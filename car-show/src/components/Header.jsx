@@ -21,7 +21,17 @@ const Header = () => {
             <div className='aboutNav'>
               <NavLink to="/about" className='aboutLink'>About</NavLink>
             </div>
+
+            <div className='registerNav'>
+              <NavLink to="/register" className='registerLink'>Register</NavLink>
+            </div>
+
+            <div className='registerNav'>
+              <NavLink to="/signIn" className='signInLink'>Sign In</NavLink>
+            </div>
+
           </div>
+          
         </div>
 
       </nav>
