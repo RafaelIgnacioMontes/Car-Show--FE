@@ -5,7 +5,7 @@ const BASE_URL = `http://localhost:3001/`
 
 const CommentForm = (props) => {
   const initialState = {
-    content: '',
+    content: ''
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -25,7 +25,7 @@ const CommentForm = (props) => {
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmit} className="comment-form">
-      <label htmlFor="content">Comments</label>
+        <label htmlFor="content">Comments</label>
         <textarea
           type="text"
           id="content"

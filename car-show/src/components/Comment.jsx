@@ -16,12 +16,9 @@ const Comment = ({ carList }) => {
 
   return (
     <div>
-      <section>
-        Comments:
-      </section>
+      <section>Comments:</section>
     </div>
-
-    )
+  )
 }
 
 export default Comment
