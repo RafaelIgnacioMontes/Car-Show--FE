@@ -12,11 +12,7 @@ import axios from 'axios'
 import CarDetails from './components/CarDetails'
 
 const App = () => {
-  let navigate = useNavigate()
-
   const [userCarList, setUserCarList] = useState([])
-
-  const [carDetails, setCarDetails] = useState()
 
   const [user, setUser] = useState(null)
 
@@ -56,7 +52,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    navigate()
     getAllCars()
     getAllComments()
     getUsersCars()
@@ -74,7 +69,6 @@ const App = () => {
                 carList={carList}
                 comments={comments}
                 getAllCars={getAllCars}
-                getAllComments={getAllComments}
                 user={user}
               />
             }
