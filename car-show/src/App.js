@@ -14,11 +14,7 @@ import CommentForm from './components/CommentForm'
 import UpdateComment from './components/UpdateComment'
 
 const App = () => {
-  let navigate = useNavigate()
-
   const [userCarList, setUserCarList] = useState([])
-
-  const [carDetails, setCarDetails] = useState()
 
   const [user, setUser] = useState(null)
 
@@ -44,7 +40,8 @@ const App = () => {
     }
   }, [])
   const getUsersCars = async () => {
-    const carsss = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+    setUserCarList(cars.data)
   }
 
   const getAllCars = async () => {
@@ -60,7 +57,6 @@ const App = () => {
 
   console.log(carList)
   useEffect(() => {
-    navigate()
     getAllCars()
     getAllComments()
     getUsersCars()
@@ -78,7 +74,6 @@ const App = () => {
                 carList={carList}
                 comments={comments}
                 getAllCars={getAllCars}
-                getAllComments={getAllComments}
                 user={user}
               />
             }

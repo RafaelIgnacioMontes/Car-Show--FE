@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const BASE_URL = `http://localhost:3001/`
 
-const CommentForm = (props) => {
+const CommentForm = ({ carDetails }) => {
   const initialState = {
     content: ''
   }
@@ -18,7 +18,10 @@ const CommentForm = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}comment/newcomment`, formState)
+    await axios.post(
+      `${BASE_URL}comment/newcomment/${carDetails.id}`,
+      formState
+    )
     setFormState(initialState)
   }
 
