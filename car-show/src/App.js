@@ -10,7 +10,9 @@ import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
 
+
 const App = () => {
+
   const [user, setUser] = useState(null)
 
   const handleLogOut = () => {
@@ -20,11 +22,14 @@ const App = () => {
   }
 
   const checkToken = async () => {
-    const user = await CheckSession()
+    const user = await CheckSession('token')
     setUser(user)
   }
-
+  const getToken = async () => {
+    token = await localStorage.getItem('token')
+  }
   useEffect(() => {
+
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
@@ -57,6 +62,7 @@ const App = () => {
       <Header user={user} handleLogOut={handleLogOut} />
       <main>
         <Routes>
+
           <Route
             path="/"
             element={
@@ -70,6 +76,7 @@ const App = () => {
             }
           />
           <Route path="/User" element={<User user={user} />} />
+
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
