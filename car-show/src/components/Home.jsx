@@ -8,7 +8,6 @@ const Home = ({ carList }) => {
   return (
     <div>
       <Car carList={carList} />
-      <Comment carList={carList} />
     </div>
   )
 }
