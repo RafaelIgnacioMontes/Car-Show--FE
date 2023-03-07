@@ -23,7 +23,7 @@ const User = ({ user, userCarList, getUsersCars }) => {
       </div>
       <section> 
         <h3>Add a Car</h3>
-        <CarForm user={user}/>
+        <CarForm user={user} getUsersCars={getUsersCars} userCarList={userCarList}/>
         </section>
     </div>
   )
