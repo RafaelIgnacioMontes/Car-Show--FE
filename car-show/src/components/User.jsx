@@ -2,7 +2,7 @@ import { useEffect } from "react"
 const User = ({ user, userCarList, getUsersCars }) => {
 
   useEffect(() => {
-    getAllCars()
+    getUsersCars()
   }, [])
   return (
     <div>

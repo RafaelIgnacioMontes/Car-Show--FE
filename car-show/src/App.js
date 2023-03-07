@@ -10,13 +10,13 @@ import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
 
-import CarDetails from './components/CarDetails'
+// import CarDetails from './components/CarDetails'
 
 const App = () => {
   let navigate = useNavigate()
   const [userCarList, setUserCarList] = useState([])
 
-  const [carDetails, setCarDetails] = useState([])
+  // const [carDetails, setCarDetails] = useState([])
 
   const [user, setUser] = useState(null)
 
@@ -35,9 +35,6 @@ const App = () => {
     setUser(user)
   }
 
-  const getToken = async () => {
-    token = await localStorage.getItem('token')
-  }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -64,7 +61,7 @@ const App = () => {
     const response = await axios.get(
       `http://localhost:3001/cars/car/${params.car_id}`
     )
-    setCarDetails(response)
+    // setCarDetails(response)
     console.log(response)
   }
 
@@ -116,6 +113,8 @@ const App = () => {
             path="/CarDetails/:car_id"
             element={<CarDetails getCarDetails={getCarDetails} />}
           />
+
+          {/* <Route path="/carDetails/:id" element={<CarDetails />} /> */}
         </Routes>
       </main>
     </div>

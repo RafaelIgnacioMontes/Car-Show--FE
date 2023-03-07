@@ -7,8 +7,15 @@ const Car = ({ carList }) => {
       {carList.map((cars) => (
         <div className="Car-Card">
 
+
+<Link to={`/carDetails/${car._id}/comments`} state={{ car }} className='link'>
+           <p>
+            <button>Car Details</button>
+            </p>
+            </Link>
+
           <img src={cars.image} alt="car image" />
-          <p className="make">{cars.make} {cars.model}</p>
+          {/* <p className="make">{cars.make} {cars.model}</p> */}
           {/* <p className="model">{cars.model}</p> */}
           {/* <p className="year">Year Built:{cars.year}</p>
           <p className="vin">VIN: {cars.vin}</p>
