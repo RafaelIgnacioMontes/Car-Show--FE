@@ -6,11 +6,11 @@ const Comment = ({ carList }) => {
 
   return (
     <div>
+
       <section>
       </section>
     </div>
-
-    )
+  )
 }
 
 export default Comment

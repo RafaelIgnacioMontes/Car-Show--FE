@@ -6,6 +6,7 @@ const Car = ({ carList }) => {
 
       {carList.map((cars) => (
         <div className="Car-Card">
+
           <img src={cars.image} alt="car image" />
           <p className="make">{cars.make} {cars.model}</p>
           {/* <p className="model">{cars.model}</p> */}
@@ -15,6 +16,7 @@ const Car = ({ carList }) => {
           <p className='comments'>{cars.comments}</p> */}
           <div>
           </div>
+
         </div>
       ))}
     </div>
