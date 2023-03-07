@@ -2,9 +2,6 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Car from './Car'
 
-import { useParams } from 'react-router-dom'
-
-
 const User = ({ user, token }) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` }
@@ -12,15 +9,16 @@ const User = ({ user, token }) => {
 
   const [userCarList, setUserCarList] = useState([])
 
-
-  console.log(user.id)
-  const getUsersCars = async () => {
-    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+  const getAllCars = async () => {
+    const cars = await axios.get(
+      `http://localhost:3001/cars/user/${user.id}`,
+      config
+    )
 
     setUserCarList(cars.data)
   }
   useEffect(() => {
-    getUsersCars()
+    getAllCars()
   }, [])
   console.log(token)
   return (
