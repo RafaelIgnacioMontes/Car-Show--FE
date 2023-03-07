@@ -11,11 +11,6 @@ import User from './components/User'
 import axios from 'axios'
 
 const App = () => {
-  let navigate = useNavigate()
-  const [userCarList, setUserCarList] = useState([])
-
-  const [carDetails, setCarDetails] = useState([])
-
   const [user, setUser] = useState(null)
 
   const [carList, setCarList] = useState([])
@@ -29,10 +24,12 @@ const App = () => {
   }
 
   const checkToken = async () => {
-    const user = await CheckSession()
+    const user = await CheckSession('token')
     setUser(user)
   }
-
+  const getToken = async () => {
+    token = await localStorage.getItem('token')
+  }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -88,16 +85,7 @@ const App = () => {
               />
             }
           />
-          <Route
-            path="/User"
-            element={
-              <User
-                user={user}
-                userCarList={userCarList}
-                getUsersCars={getUsersCars}
-              />
-            }
-          />
+          <Route path="/User" element={<User user={user} />} />
 
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
