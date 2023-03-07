@@ -4,10 +4,10 @@
 import Car from './Car'
 import Comment from './Comment'
 
-const Home = ({ carList }) => {
+const Home = ({ carList, handleClick }) => {
   return (
     <div>
-      <Car carList={carList} />
+      <Car carList={carList} handleClick={handleClick} />
     </div>
   )
 }
