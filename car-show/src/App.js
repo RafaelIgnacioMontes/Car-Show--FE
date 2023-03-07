@@ -27,9 +27,9 @@ const App = () => {
     const user = await CheckSession('token')
     setUser(user)
   }
-  const getToken = async () => {
-    token = await localStorage.getItem('token')
-  }
+  // const getToken = async () => {
+  //   token = await localStorage.getItem('token')
+  // }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
