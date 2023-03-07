@@ -12,8 +12,6 @@ import axios from 'axios'
 import CarDetails from './components/CarDetails'
 
 const App = () => {
-  let navigate = useNavigate()
-
   const [userCarList, setUserCarList] = useState([])
 
   const [user, setUser] = useState(null)
@@ -40,7 +38,8 @@ const App = () => {
     }
   }, [])
   const getUsersCars = async () => {
-    const carsss = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+    setUserCarList(cars.data)
   }
 
   const getAllCars = async () => {
@@ -72,7 +71,6 @@ const App = () => {
                 carList={carList}
                 comments={comments}
                 getAllCars={getAllCars}
-                getAllComments={getAllComments}
                 user={user}
               />
             }
