@@ -9,14 +9,14 @@ import SignIn from './components/SignIn'
 import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
-
 import CarDetails from './components/CarDetails'
 
 const App = () => {
   let navigate = useNavigate()
+
   const [userCarList, setUserCarList] = useState([])
 
-  const [carDetails, setCarDetails] = useState([])
+  const [carDetails, setCarDetails] = useState()
 
   const [user, setUser] = useState(null)
 
@@ -41,33 +41,24 @@ const App = () => {
       checkToken()
     }
   }, [])
-  const getUsersCars = async () => {
-    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
-
-    setUserCarList(cars.data)
+  const getUsersCars = async (props) => {
+    const carsss = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
   }
 
   const getAllCars = async () => {
     const response = await axios.get('http://localhost:3001/cars/all')
     setCarList(response.data)
-    // console.log(response)
+    console.log(response.data)
   }
   const getAllComments = async () => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data)
     // console.log(response)
   }
-  const getCarDetails = async (params) => {
-    const response = await axios.get(
-      `http://localhost:3001/cars/car/${params.car_id}`
-    )
-    setCarDetails(response)
-    console.log(response)
-  }
-
-  const handleClick = () => {
-    navigate('/CarDetails/:car_id')
-  }
+  // const getCarDetails = async () => {
+  //   const carDeets = await axios.get(`http://localhost:3001/cars/car/${}`)
+  //   setCarDetails(carDeets)
+  // }
 
   console.log(carList)
   useEffect(() => {
@@ -111,7 +102,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route
             path="/CarDetails/:car_id"
-            element={<CarDetails carList={carList} getAllCars={getAllCars} />}
+            element={<CarDetails getCarDetails={getCarDetails} />}
           />
         </Routes>
       </main>
