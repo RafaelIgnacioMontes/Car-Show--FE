@@ -1,19 +1,18 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Car from './Car'
-import { useParams } from ''
+import { useParams } from 'react-router-dom'
 
 const User = ({ user }) => {
   const [userCarList, setUserCarList] = useState([])
 
-  const getAllCars = async ({ user }) => {
-    let userId = useParams()
-    const cars = await axios.get(`http://localhost:3001/cars/user/${userId}`)
+  console.log(user.id)
+  const getUsersCars = async () => {
+    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
     setUserCarList(cars.data)
-    console.log(userId)
   }
   useEffect(() => {
-    getAllCars()
+    getUsersCars()
   }, [])
 
   return (

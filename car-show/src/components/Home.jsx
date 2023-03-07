@@ -2,11 +2,14 @@
 // import { Link } from 'react-router-dom'
 // import axios from 'axios'
 import Car from './Car'
+import Comment from './Comment'
 
-
-const Home = () => {
+const Home = ({ carList }) => {
   return(
-  <div><Car /></div>
+  <div>
+    <Car carList={carList}/>
+    <Comment carList={carList}/>
+  </div>
   )
 }
 
