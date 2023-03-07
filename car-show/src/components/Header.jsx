@@ -62,6 +62,17 @@ const Header = ({ user, handleLogOut }) => {
               About
             </NavLink>
           </div>
+          <div className="Nav">
+          <Link to="/commentForm" className="commentFormLink">
+            Add a comment
+          </Link>
+        </div>
+
+        <div className="Nav">
+          <Link to="/updateComment" className="updateCommentLink">
+            Update Comment
+          </Link>
+        </div>
 
           <div className="registerNav"></div>
         </div>

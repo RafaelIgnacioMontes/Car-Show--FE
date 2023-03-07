@@ -10,6 +10,8 @@ import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
 import CarDetails from './components/CarDetails'
+import CommentForm from './components/CommentForm'
+import UpdateComment from './components/UpdateComment'
 
 const App = () => {
   let navigate = useNavigate()
@@ -96,6 +98,9 @@ const App = () => {
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
           <Route path="/CarDetails/:id" element={<CarDetails />} />
+
+          <Route path="/commentForm/" element={<CommentForm />} />
+          <Route path="/updateComment/" element={<UpdateComment />} />
         </Routes>
       </main>
     </div>

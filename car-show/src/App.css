@@ -126,3 +126,9 @@ position: absolute;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

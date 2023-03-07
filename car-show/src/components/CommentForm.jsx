@@ -35,7 +35,7 @@ const CommentForm = (props) => {
           value={formState.content}
         />
         <button className="submit-button" type="submit">
-          Submit
+          Add Comment
         </button>
       </form>
     </div>

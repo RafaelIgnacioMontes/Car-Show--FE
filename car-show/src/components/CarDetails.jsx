@@ -20,6 +20,7 @@ console.log(id)
 
 if(isLoaded){
   return (
+    <div>
     <>
       <h1>This Car</h1>
       <div className="carcard">
@@ -31,6 +32,9 @@ if(isLoaded){
         <p>{carDetails.vin}</p>
           </div>
     </>
+    <div> <button>Add Comment </button> </div>
+
+    </div>
   )
 }
 }
