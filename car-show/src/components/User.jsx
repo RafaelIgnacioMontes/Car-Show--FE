@@ -1,10 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import CarForm from './CarForm'
 const User = ({ user, userCarList, getUsersCars }) => {
-  
+
+  const [addingCar, setAddingCar] = useState(false)
+
   useEffect(() => {
     getUsersCars()
   }, [])
+
+  const addCar = () => {
+    setAddingCar((current) => !current)
+  }
 
   return (
     <div>
@@ -22,8 +28,8 @@ const User = ({ user, userCarList, getUsersCars }) => {
         ))}
       </div>
       <section> 
-        <h3>Add a Car</h3>
-        <CarForm user={user} getUsersCars={getUsersCars} userCarList={userCarList}/>
+        <button onClick={addCar} className='add-car'>Add Car</button>
+        {addingCar && <CarForm user={user} getUsersCars={getUsersCars} userCarList={userCarList}/>}
         </section>
     </div>
   )
