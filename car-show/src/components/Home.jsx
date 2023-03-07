@@ -7,7 +7,7 @@ import Comment from './Comment'
 const Home = ({ carList, handleClick }) => {
   return (
     <div>
-      <Car carList={carList} handleClick={handleClick} />
+      <Car carList={carList} handleClick={handleClick}/>
     </div>
   )
 }

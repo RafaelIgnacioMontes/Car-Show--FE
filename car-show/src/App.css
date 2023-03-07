@@ -102,11 +102,19 @@ section img {
 .Car-Card{
   position: relative;
   text-align: center;
+  
 }
 .Car-Card img {
+  object-fit: cover;
   height: 40vh;
   width: 35vw;
   border-radius: 10%;
+}
+.Car-Card img:hover {
+  display: absolute;
+  box-shadow: 2px 2px 5px 5px black;
+  height: 42vh;
+  width: 40vw;
 }
 .Car-Card p {
 position: absolute;
