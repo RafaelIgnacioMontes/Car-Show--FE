@@ -35,9 +35,6 @@ const App = () => {
     setUser(user)
   }
 
-  const getToken = async () => {
-    token = await localStorage.getItem('token')
-  }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -53,7 +50,7 @@ const App = () => {
   const getAllCars = async () => {
     const response = await axios.get('http://localhost:3001/cars/all')
     setCarList(response.data)
-    console.log(response)
+    // console.log(response)
   }
   const getAllComments = async () => {
     const response = await axios.get('http://localhost:3001/comment/all')
@@ -114,7 +111,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route
             path="/CarDetails/:car_id"
-            element={<CarDetails getCarDetails={getCarDetails} />}
+            element={<CarDetails carList={carList} getAllCars={getAllCars} />}
           />
         </Routes>
       </main>
