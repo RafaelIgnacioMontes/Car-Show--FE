@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import './App.css'
@@ -41,7 +41,7 @@ const App = () => {
       checkToken()
     }
   }, [])
-  const getUsersCars = async (props) => {
+  const getUsersCars = async () => {
     const carsss = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
   }
 
@@ -53,19 +53,13 @@ const App = () => {
   const getAllComments = async () => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data)
-    // console.log(response)
   }
-  // const getCarDetails = async () => {
-  //   const carDeets = await axios.get(`http://localhost:3001/cars/car/${}`)
-  //   setCarDetails(carDeets)
-  // }
 
   console.log(carList)
   useEffect(() => {
     navigate()
     getAllCars()
     getAllComments()
-    getCarDetails()
     getUsersCars()
   }, [])
 
@@ -100,10 +94,7 @@ const App = () => {
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="/CarDetails/:car_id"
-            element={<CarDetails getCarDetails={getCarDetails} />}
-          />
+          <Route path="/CarDetails/:id" element={<CarDetails />} />
         </Routes>
       </main>
     </div>
