@@ -13,14 +13,14 @@ const CarDetails = () => {
     setCarDetails(carDeets.data)
     setIsLoaded(true)
   }
-console.log(id)
+
   useEffect(() => {
     getCarDetails()
   }, [])
 
 if(isLoaded){
   return (
-    <>
+    <div>
       <h1>This Car</h1>
       <div className="carcard">
         <img src={carDetails.image}></img>
@@ -29,8 +29,8 @@ if(isLoaded){
         <p>{carDetails.year}</p>
         <p>{carDetails.color}</p>
         <p>{carDetails.vin}</p>
-          </div>
-    </>
+        </div>
+    </div>
   )
 }
 }

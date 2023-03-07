@@ -4,16 +4,17 @@ import Home from './Home'
 
 const BASE_URL = `http://localhost:3001/`
 
-const CarForm = (props) => {
+const CarForm = ({ user }) => {
   const initialState = {
     make: '',
     model: '',
     year: '',
     vin: '',
     image: '',
-    color: ''
+    color: '',
+    userId: user.id
   }
-
+  console.log(user)
   const [formState, setFormState] = useState(initialState)
   const [car, setCar] = useState()
 
