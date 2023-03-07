@@ -41,10 +41,8 @@ const App = () => {
       checkToken()
     }
   }, [])
-  const getUsersCars = async (props) => {
-    const carsss = await axios.get(
-      `http://localhost:3001/cars/user/${user._id}`
-    )
+  const getUsersCars = async () => {
+    const carsss = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
   }
 
   const getAllCars = async () => {
@@ -56,14 +54,6 @@ const App = () => {
   const getAllComments = async () => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data)
-    // console.log(response)
-  }
-
-  const getCarDetails = async (id) => {
-    const { id } = useParams()
-    const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
-    setCarDetails(carDeets)
-    console.log('this is a test', carDeets)
   }
 
   console.log(carList)
@@ -71,7 +61,6 @@ const App = () => {
     navigate()
     getAllCars()
     getAllComments()
-    getCarDetails()
     getUsersCars()
   }, [])
 
@@ -106,12 +95,7 @@ const App = () => {
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path={`/:id/CarDetails`}
-            element={<CarDetails carDetails={carDetails} />}
-          />
-
-          {/* <Route path="/carDetails/:id" element={<CarDetails />} /> */}
+          <Route path="/CarDetails/:id" element={<CarDetails />} />
         </Routes>
       </main>
     </div>
