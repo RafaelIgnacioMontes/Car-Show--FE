@@ -63,6 +63,9 @@ const App = () => {
     setCarDetails(response)
     console.log(response)
   }
+  const handleClick = () => {
+    navigate('/CarDetails/:car_id')
+  }
 
   console.log(carList)
   useEffect(() => {
