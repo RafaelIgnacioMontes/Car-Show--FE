@@ -9,6 +9,7 @@ import SignIn from './components/SignIn'
 import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
+
 import CarDetails from './components/CarDetails'
 
 const App = () => {
@@ -34,6 +35,9 @@ const App = () => {
     setUser(user)
   }
 
+  const getToken = async () => {
+    token = await localStorage.getItem('token')
+  }
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -63,6 +67,7 @@ const App = () => {
     setCarDetails(response)
     console.log(response)
   }
+
   const handleClick = () => {
     navigate('/CarDetails/:car_id')
   }

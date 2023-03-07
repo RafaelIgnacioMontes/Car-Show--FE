@@ -1,10 +1,7 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import Car from './Car'
 
-import { useParams } from 'react-router-dom'
+import { useEffect } from "react"
+const User = ({ user, userCarList, getUsersCars }) => {
 
-const User = ({ user, getUsersCars, userCarList }) => {
   useEffect(() => {
     getUsersCars()
   }, [])
@@ -13,7 +10,7 @@ const User = ({ user, getUsersCars, userCarList }) => {
       <h1>Test</h1>
       <div>
         {userCarList.map((cars) => (
-          <div className="Car-Card">
+          <div className="User-Car-Card">
             <img src={cars.image} alt="car image" />
             <p className="make">Make:{cars.make}</p>
             <p className="model">Model:{cars.model}</p>

@@ -3,7 +3,6 @@ body {
 }
 header {
   background-color: #141265;
-  justify-content: flex-end;
   align-items: center;
   height: 3.5em;
   position: fixed;
@@ -28,47 +27,8 @@ header {
   transform: scale(1.06);
 }
 
-.logoImage:hover ~ .logoImage {
-  transform: translateY(10px);
-}
-
-.homeNav:hover {
+.Nav:hover {
   transform: scale(1.1);
-}
-
-.homeNav:hover ~ .homeNav {
-  transform: translateY(10px);
-}
-
-.aboutNav:hover {
-  transform: scale(1.1);
-}
-
-.aboutNav:hover ~ .aboutNav {
-  transform: translateY(10px);
-}
-
-.registerNav:hover {
-  transform: scale(1.1);
-}
-
-.registerNav:hover ~ .registerNav {
-  transform: translateY(10px);
-}
-
-.signInNav:hover {
-  transform: scale(1.1);
-}
-
-.signInNav:hover ~ .signInNav {
-  transform: translateY(10px);
-}
-.myPageNav:hover {
-  transform: scale(1.1);
-}
-
-.myPageNav:hover ~ .myPageNav {
-  transform: translateY(10px);
 }
 
 .homeAbout a {
@@ -83,27 +43,10 @@ header {
   color: beige;
 }
 
-.homeAbout a {
-  padding: 1vh 1vw;
-  color: beige;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.homeAbout {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  max-width: 200vw;
-  max-height: 20vh;
-  font-size: 20px;
-}
-
 header nav a {
   margin: 0 1em;
   color: beige;
+  text-decoration: none;
 }
 
 .logoHomeAbout {
@@ -155,4 +98,23 @@ section img {
 
 .welcomemessage {
   color: beige;
+}
+.Car-Card{
+  position: relative;
+  text-align: center;
+}
+.Car-Card img {
+  height: 40vh;
+  width: 35vw;
+  border-radius: 10%;
+}
+.Car-Card p {
+position: absolute;
+  top: 75%;
+  left: 50%;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
 }
