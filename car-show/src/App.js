@@ -16,8 +16,6 @@ const App = () => {
 
   const [userCarList, setUserCarList] = useState([])
 
-  const [carDetails, setCarDetails] = useState()
-
   const [user, setUser] = useState(null)
 
   const [carList, setCarList] = useState([])
@@ -42,7 +40,8 @@ const App = () => {
     }
   }, [])
   const getUsersCars = async (props) => {
-    const carsss = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+    setUserCarList(cars.data)
   }
 
   const getAllCars = async () => {
@@ -55,18 +54,13 @@ const App = () => {
     setComments(response.data)
     // console.log(response)
   }
-  // const getCarDetails = async () => {
-  //   const carDeets = await axios.get(`http://localhost:3001/cars/car/${}`)
-  //   setCarDetails(carDeets)
-  // }
 
   console.log(carList)
   useEffect(() => {
-    navigate()
     getAllCars()
     getAllComments()
-    getCarDetails()
-    getUsersCars()
+    // getCarDetails()
+    // getUsersCars()
   }, [])
 
   return (
@@ -100,10 +94,7 @@ const App = () => {
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path={`/:id/CarDetails`}
-            element={<CarDetails carDetails={carDetails} />}
-          />
+          <Route path={`/:id/CarDetails`} element={<CarDetails />} />
         </Routes>
       </main>
     </div>
