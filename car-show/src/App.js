@@ -10,7 +10,14 @@ import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
 
+import CarDetails from './components/CarDetails'
+
 const App = () => {
+  let navigate = useNavigate()
+  const [userCarList, setUserCarList] = useState([])
+
+  const [carDetails, setCarDetails] = useState([])
+
   const [user, setUser] = useState(null)
 
   const [carList, setCarList] = useState([])
@@ -24,9 +31,10 @@ const App = () => {
   }
 
   const checkToken = async () => {
-    const user = await CheckSession('token')
+    const user = await CheckSession()
     setUser(user)
   }
+
   const getToken = async () => {
     token = await localStorage.getItem('token')
   }
@@ -60,8 +68,13 @@ const App = () => {
     console.log(response)
   }
 
+  const handleClick = () => {
+    navigate('/CarDetails/:car_id')
+  }
+
   console.log(carList)
   useEffect(() => {
+    navigate()
     getAllCars()
     getAllComments()
     getCarDetails()
@@ -85,11 +98,24 @@ const App = () => {
               />
             }
           />
-          <Route path="/User" element={<User user={user} />} />
+          <Route
+            path="/User"
+            element={
+              <User
+                user={user}
+                userCarList={userCarList}
+                getUsersCars={getUsersCars}
+              />
+            }
+          />
 
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
+          <Route
+            path="/CarDetails/:car_id"
+            element={<CarDetails getCarDetails={getCarDetails} />}
+          />
         </Routes>
       </main>
     </div>

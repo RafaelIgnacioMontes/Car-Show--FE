@@ -5,11 +5,10 @@ import Car from './Car'
 import Comment from './Comment'
 
 const Home = ({ carList }) => {
-  return(
-  <div>
-    <Car carList={carList}/>
-    <Comment carList={carList}/>
-  </div>
+  return (
+    <div>
+      <Car carList={carList} />
+    </div>
   )
 }
 
