@@ -6,7 +6,6 @@ const Register = () => {
   let navigate = useNavigate()
   const initialState = {
     userName: '',
-    name: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -20,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      name: formValues.name,
+      userName: formValues.userName,
       email: formValues.email,
       password: formValues.password
     })
@@ -40,17 +39,6 @@ const Register = () => {
               type="text"
               placeholder="Username"
               value={formValues.userName}
-              required
-            />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
-            <input
-              onChange={handleChange}
-              name="name"
-              type="text"
-              placeholder="John Smith"
-              value={formValues.name}
               required
             />
           </div>

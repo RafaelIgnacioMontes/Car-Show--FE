@@ -1,32 +1,15 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import Car from './Car'
+import { useEffect } from "react"
+const User = ({ user, userCarList, getUsersCars }) => {
 
-const User = ({ user, token }) => {
-  const config = {
-    headers: { Authorization: `Bearer ${token}` }
-  }
-
-  const [userCarList, setUserCarList] = useState([])
-
-  const getAllCars = async () => {
-    const cars = await axios.get(
-      `http://localhost:3001/cars/user/${user.id}`,
-      config
-    )
-
-    setUserCarList(cars.data)
-  }
   useEffect(() => {
     getAllCars()
   }, [])
-  console.log(token)
   return (
     <div>
       <h1>Test</h1>
       <div>
         {userCarList.map((cars) => (
-          <div className="Car-Card">
+          <div className="User-Car-Card">
             <img src={cars.image} alt="car image" />
             <p className="make">Make:{cars.make}</p>
             <p className="model">Model:{cars.model}</p>

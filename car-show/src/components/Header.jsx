@@ -7,17 +7,17 @@ const Header = ({ user, handleLogOut }) => {
     userOptions = (
       <div className="logoHomeAbout">
         <p className="welcomemessage">Welcome {user.email}!</p>
-        <div className="homeNav">
+        <div className="Nav">
           <Link to="/" className="homeLink">
             Home
           </Link>
         </div>
-        <div className="signInNav">
+        <div className="Nav">
           <Link onClick={handleLogOut} to="/">
             Sign Out
           </Link>
         </div>
-        <div className="myPageNav">
+        <div className="Nav">
           <Link to="/User" className="homeLink">
             My Page
           </Link>
@@ -27,17 +27,17 @@ const Header = ({ user, handleLogOut }) => {
   }
   const publicOptions = (
     <div className="logoHomeAbout">
-      <div className="homeNav">
+      <div className="Nav">
         <Link to="/" className="homeLink">
           Home
         </Link>
       </div>
-      <div className="registerNav">
+      <div className="Nav">
         <Link to="/register" className="registerNav">
           Register
         </Link>
       </div>
-      <div className="signInNav">
+      <div className="Nav">
         <Link to="/signin">Sign In</Link>
       </div>
     </div>
@@ -57,7 +57,7 @@ const Header = ({ user, handleLogOut }) => {
             <h1 className="car-show">Car Show</h1>
           </div>
           {user ? userOptions : publicOptions}
-          <div className="aboutNav">
+          <div className="Nav">
             <NavLink to="/about" className="aboutLink">
               About
             </NavLink>

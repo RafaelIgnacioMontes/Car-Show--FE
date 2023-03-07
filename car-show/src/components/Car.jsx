@@ -1,8 +1,3 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import Comment from './Comment'
-import CommentForm from './CommentForm'
-
 const Car = ({ carList }) => {
 
     return (
@@ -11,15 +6,17 @@ const Car = ({ carList }) => {
 
       {carList.map((cars) => (
         <div className="Car-Card">
+
           <img src={cars.image} alt="car image" />
-          <p className="make">Make:{cars.make}</p>
-          <p className="model">Model:{cars.model}</p>
-          <p className="year">Year Built:{cars.year}</p>
+          <p className="make">{cars.make} {cars.model}</p>
+          {/* <p className="model">{cars.model}</p> */}
+          {/* <p className="year">Year Built:{cars.year}</p>
           <p className="vin">VIN: {cars.vin}</p>
           <p className="color">Color: {cars.color}</p>
+          <p className='comments'>{cars.comments}</p> */}
           <div>
-          {/* <CommentForm /> */}
           </div>
+
         </div>
       ))}
     </div>
