@@ -1,28 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Comment from './Comment'
+import CommentForm from './CommentForm'
 
-const Car = (response) => {
-  const [carList, setCarList] = useState([])
+const Car = ({ carList }) => {
 
-  const [comments, setComments] = useState([])
-
-  const getAllCars = async () => {
-    const response = await axios.get('http://localhost:3001/cars/all')
-    setCarList(response.data)
-    // console.log(response)
-  }
-  const getAllComments = async (comments) => {
-    const response = await axios.get('http://localhost:3001/comment/all')
-    setComments(response.data)
-    console.log(response)
-  }
-
-  useEffect(() => {
-    getAllCars()
-    getAllComments()
-  }, [])
-  return (
-    <div>
+    return (
+      <div>
       <h1 className="Title"> Car Collection </h1>
 
       {carList.map((cars) => (
@@ -33,7 +17,9 @@ const Car = (response) => {
           <p className="year">Year Built:{cars.year}</p>
           <p className="vin">VIN: {cars.vin}</p>
           <p className="color">Color: {cars.color}</p>
-          <div></div>
+          <div>
+          {/* <CommentForm /> */}
+          </div>
         </div>
       ))}
     </div>
