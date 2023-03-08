@@ -85,8 +85,11 @@ const CarDetails = ({ user, userCarList }) => {
             />
             {carDetails?.comments?.map((comment) => (
               <div>
+
                 {/* <button onClick={(e)=> deleteComment(e)}>Delete </button> */}
                 {comment.car.userName}: {comment.content}
+
+        
               </div>
             <h5>Comments</h5>
             {carDetails.comments.map((comment) => (
