@@ -4,16 +4,20 @@ import Home from './Home'
 
 const BASE_URL = `http://localhost:3001/`
 
-const CarForm = (props) => {
+const CarForm = ({ user, getUsersCars, userCarList }) => {
+
+  let userId = user.id
+
   const initialState = {
     make: '',
     model: '',
     year: '',
     vin: '',
     image: '',
-    color: ''
+    color: '',
+    userId
   }
-
+  
   const [formState, setFormState] = useState(initialState)
   const [car, setCar] = useState()
 
@@ -21,11 +25,11 @@ const CarForm = (props) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
     setCar(formState.car)
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(`${BASE_URL}cars/newcar`, formState)
     setFormState(initialState)
+    getUsersCars()
   }
 
   return (

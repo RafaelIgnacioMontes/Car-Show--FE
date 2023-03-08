@@ -49,15 +49,12 @@ const App = () => {
   const getAllCars = async () => {
     const response = await axios.get('http://localhost:3001/cars/all')
     setCarList(response.data)
-    console.log(response.data)
   }
 
   const getAllComments = async () => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data)
   }
-
-  console.log(carList)
   useEffect(() => {
     getUsersCars()
     getAllCars()
@@ -94,10 +91,16 @@ const App = () => {
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/CarDetails/:id" element={<CarDetails />} />
-
-          <Route path="/commentForm/" element={<CommentForm />} />
-          <Route path="/updateComment/" element={<UpdateComment />} />
+          <Route
+            path="/CarDetails/:id"
+            element={
+              <CarDetails
+                user={user}
+                getUsersCars={getUsersCars}
+                userCarList={userCarList}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>
