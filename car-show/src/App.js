@@ -53,10 +53,6 @@ const App = () => {
     setComments(response.data)
   }
 
-  const deleteCar = async () => {
-    const response = await axios.delete('http://localhost:3001/delete/')
-  }
-
   useEffect(() => {
     getUsersCars()
     getAllCars()
