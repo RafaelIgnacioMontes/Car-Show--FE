@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from './CommentForm'
+import UpdateComment from './UpdateComment'
 
 const CarDetails = ({ user, userCarList }) => {
   let { id } = useParams()
-  let navigate = useNavigate()
+  const [showResults, setShowResults] = useState(false)
+  const clicky = () => {
+    setShowResults(true)
+  }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -13,55 +17,39 @@ const CarDetails = ({ user, userCarList }) => {
     const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
     setCarDetails(carDeets.data)
     setIsLoaded(true)
-    console.log(carDeets)
   }
-
-  const deleteCar = async (e) => {
+  const deleteComment = async (e, commentId) => {
     e.preventDefault()
-     await axios.delete(
-      `http://localhost:3001/cars/delete/${id}`
-    )
-    navigate('/')
+    await axios.delete(`http://localhost:3001/comment/delete/${commentId}`)
+    getCarDetails()
   }
-
-  const updateComment = async (e, commentId) => {
-    e.preventDefault()
-     await axios.delete(
-      `http://localhost:3001/update/${commentId}`
-    )
-    navigate('/')
-  }
-
-  // console.log(carDetails.comments)
-
   useEffect(() => {
     if (user){
 
   
     getCarDetails()
-  }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user])
 
   let userOptions
   if (user) {
     userOptions = (
       <div>
-      <CommentForm
-        carDetails={carDetails}
-        user={user}
-        getCarDetails={getCarDetails}
+        <CommentForm
+          carDetails={carDetails}
+          user={user}
+          getCarDetails={getCarDetails}
         />
       </div>
-    )}
-    const publicOptions = (
-        <div></div>
-      )
+    )
+  }
+  const publicOptions = <div></div>
 
   if (isLoaded) {
     return (
-      <>
-        <h1>This Car</h1>
+      <div>
+        <h1>
+          {carDetails.make} {carDetails.model}
+        </h1>
         <div className="carcard">
           < img src={carDetails?.image} alt={carDetails?.model}></img>
           <button onClick={(e) => deleteCar(e)}>Delete</button>
@@ -71,32 +59,27 @@ const CarDetails = ({ user, userCarList }) => {
           <p>{carDetails?.color}</p>
           <p>{carDetails?.vin}</p>
           <div>
-           
-            {carDetails?.comments?.map((comment) => (
+            <h5>Comments</h5>
+            {carDetails.comments.map((comment) => (
               <div>
-                {/* <button onClick={(e)=> updateComment(e)}>Update Comment </button> */}
-                {comment.car.userName}: {comment.content}
+                {comment.car.userName}:{comment.content}
                 {user?.id === comment?.userId && (
+                  <button onClick={(e) => deleteComment(e, comment.id)}>
+                    Delete
+                  </button>
+                )}
                 <div>
-                <button>delete</button>
-
-
-                <Link to={`/update/${comment._id}/updateComment`}>
-                    <button className='addReview-btn'>Add Review</button>
-                </Link>
-
-                <button onClick={() => {updateComment()}}>Update</button>
-                
-                
+                  {user?.id === comment?.userId && (
+                    <UpdateComment
+                      comment={comment}
+                      getCarDetails={getCarDetails}
+                    />
+                  )}
                 </div>
-              )}
               </div>
-              
             ))}
-            </div>
-            <div>
-          {user ? userOptions: publicOptions}    
           </div>
+          <div>{user ? userOptions : publicOptions}</div>
         </div>
       </>
     )

@@ -2,23 +2,12 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const UpdateComment = ({ comment }) => {
-  const { commentId } = useParams()
+const UpdateComment = ({ comment, getCarDetails }) => {
+  console.log(comment)
 
-  let navigate = useNavigate()
-
-  const [updateComment, setUpdateComment] = useState()
-
-  // useEffect(() => {
-  //   const getComment = async () => {
-  //     const response = await axios.get(
-  //       `http://localhost:3001/comment/${commentId}`
-  //     )
-  //     setUpdateComment(response.data.content)
-  //     console.log(response.data.content)
-  //   }
-  //   getComment()
-  // }, [commentId])
+  const [updateComment, setUpdateComment] = useState({
+    content: ''
+  })
 
   const handleChangeUpdate = (event) => {
     setUpdateComment({
@@ -29,13 +18,11 @@ const UpdateComment = ({ comment }) => {
 
   const handleSubmitUpdate = async (event) => {
     event.preventDefault()
-    console.log(event.target)
-
     await axios.put(
-      `http://localhost:3001/comment/update/${commentId}`,
+      `http://localhost:3001/comment/update/${comment.id}`,
       updateComment
     )
-    navigate('/cars')
+    getCarDetails()
   }
 
   return (
@@ -45,8 +32,8 @@ const UpdateComment = ({ comment }) => {
         <textarea
           type="text"
           id="content"
-          cols="30"
-          rows="8"
+          cols="80"
+          rows="2"
           onChange={handleChangeUpdate}
           // value={updateComment.content}
         />

@@ -2,18 +2,16 @@
 // import { Link } from 'react-router-dom'
 // import axios from 'axios'
 import Car from './Car'
-import Comment from './Comment'
 import { useEffect } from 'react'
 
 const Home = ({ carList, getAllCars }) => {
-  
   useEffect(() => {
     getAllCars()
   }, [])
-  
+
   return (
     <div>
-      <Car carList={carList}/>
+      <Car carList={carList} />
     </div>
   )
 }
