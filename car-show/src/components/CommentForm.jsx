@@ -8,7 +8,6 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
   let { id } = useParams()
   let userId = user.id
 
-  console.log(userId)
   const initialState = {
     userId,
     content: ''
