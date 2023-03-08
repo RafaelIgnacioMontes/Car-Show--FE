@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from './CommentForm'
 
-const CarDetails = ({ user, userCarList }) => {
+const CarDetails = ({ user }) => {
   let { id } = useParams()
   let navigate = useNavigate()
   const [carDetails, setCarDetails] = useState()
@@ -28,7 +28,7 @@ const CarDetails = ({ user, userCarList }) => {
 
   if (isLoaded) {
     return (
-      <>
+      <div>
         <h1>This Car</h1>
         <div className="carcard">
           <img src={carDetails.image} alt={'car image'}></img>
@@ -46,12 +46,12 @@ const CarDetails = ({ user, userCarList }) => {
             />
             {carDetails.comments.map((comment) => (
               <div>
-                {comment.car.userName}: {comment.content}
+                {comment.car.userName} :{comment.content}
               </div>
             ))}
           </div>
         </div>
-      </>
+      </div>
     )
   }
 }
