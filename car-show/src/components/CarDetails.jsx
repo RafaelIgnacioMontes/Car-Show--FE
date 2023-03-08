@@ -24,7 +24,7 @@ const CarDetails = ({ user }) => {
       <>
         <h1>This Car</h1>
         <div className="carcard">
-          <img src={carDetails.image} alt={'car image'}></img>
+          {/* <img src={carDetails.image} alt='car image' /> */}
           <p>{carDetails.make}</p>
           <p>{carDetails.model}</p>
           <p>{carDetails.year}</p>
@@ -32,7 +32,7 @@ const CarDetails = ({ user }) => {
           <p>{carDetails.vin}</p>
           <CommentForm carDetails={carDetails} />
           <div>
-            {carDetails.comments.map((comment) => (
+            {carDetails.comments?.map((comment) => (
               <div>
                 {comment.car.userName}:{comment.content}
               </div>
