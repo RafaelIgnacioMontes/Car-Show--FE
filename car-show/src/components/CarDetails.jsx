@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from './CommentForm'
+import UpdateComment from './UpdateComment'
 
 const CarDetails = ({ user }) => {
   let { id } = useParams()
-  let navigate = useNavigate()
+  const [showResults, setShowResults] = useState(false)
+  const clicky = () => {
+    setShowResults(true)
+  }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -13,32 +17,36 @@ const CarDetails = ({ user }) => {
     const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
     setCarDetails(carDeets.data)
     setIsLoaded(true)
-    console.log(carDeets)
   }
-
+  const deleteComment = async (e, commentId) => {
+    e.preventDefault()
+    await axios.delete(`http://localhost:3001/comment/delete/${commentId}`)
+    getCarDetails()
+  }
   useEffect(() => {
     getCarDetails()
-  }, [])
+  }, [user])
 
   let userOptions
   if (user) {
     userOptions = (
       <div>
-      <CommentForm
-        carDetails={carDetails}
-        user={user}
-        getCarDetails={getCarDetails}
+        <CommentForm
+          carDetails={carDetails}
+          user={user}
+          getCarDetails={getCarDetails}
         />
       </div>
-    )}
-    const publicOptions = (
-        <div></div>
-      )
+    )
+  }
+  const publicOptions = <div></div>
 
   if (isLoaded) {
     return (
       <div>
-        <h1>{carDetails.make} {carDetails.model}</h1>
+        <h1>
+          {carDetails.make} {carDetails.model}
+        </h1>
         <div className="carcard">
           <img src={carDetails.image} alt={'car image'}></img>
           <p>Make: {carDetails.make}</p>
@@ -49,14 +57,25 @@ const CarDetails = ({ user }) => {
           <div>
             <h5>Comments</h5>
             {carDetails.comments.map((comment) => (
-            <div>
-                {comment.car.userName} :{comment.content}
+              <div>
+                {comment.car.userName}:{comment.content}
+                {user?.id === comment?.userId && (
+                  <button onClick={(e) => deleteComment(e, comment.id)}>
+                    Delete
+                  </button>
+                )}
+                <div>
+                  {user?.id === comment?.userId && (
+                    <UpdateComment
+                      comment={comment}
+                      getCarDetails={getCarDetails}
+                    />
+                  )}
                 </div>
+              </div>
             ))}
-            </div>
-            <div>
-          {user ? userOptions: publicOptions}    
           </div>
+          <div>{user ? userOptions : publicOptions}</div>
         </div>
       </div>
     )
