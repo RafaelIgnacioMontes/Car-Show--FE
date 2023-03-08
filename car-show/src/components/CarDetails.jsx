@@ -34,7 +34,7 @@ const CarDetails = ({ user }) => {
           <div>
             {carDetails.comments.map((comment) => (
               <div>
-                {comment.car.userName}:{comment.content}
+                {comment.car.userName}: {comment.content}
               </div>
             ))}
           </div>
