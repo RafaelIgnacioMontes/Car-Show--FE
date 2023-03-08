@@ -30,7 +30,7 @@ const CarDetails = ({ user, userCarList }) => {
     getCarDetails()
   }
   }, [user])
- }
+ 
   let userOptions
   if (user) {
     userOptions = (
@@ -53,7 +53,7 @@ const CarDetails = ({ user, userCarList }) => {
         </h1>
         <div className="carcard">
           < img src={carDetails?.image} alt={carDetails?.model}></img>
-          <button onClick={(e) => deleteCar(e)}>Delete</button>
+          {/* <button onClick={(e) => deleteCar(e)}>Delete</button> */}
           <p>{carDetails?.make}</p>
           <p>{carDetails?.model}</p>
           <p>{carDetails?.year}</p>
@@ -84,7 +84,7 @@ const CarDetails = ({ user, userCarList }) => {
         </div>
       </div>
     )
+    }
+  
   }
-
-
 export default CarDetails
