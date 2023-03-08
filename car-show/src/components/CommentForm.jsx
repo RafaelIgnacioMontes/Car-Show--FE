@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 const BASE_URL = `http://localhost:3001/`
 
-const CommentForm = ({ carDetails }) => {
-  const initialState = {
-    content: ''
-  }
+const CommentForm = ({ carDetails, user, getCarDetails }) => {
+  let { id } = useParams()
+  let userId = user.id
 
+  const initialState = {
+    content: '',
+  }
+console.log(id)
   const [formState, setFormState] = useState(initialState)
   const [comment, setComment] = useState()
 
@@ -23,6 +27,7 @@ const CommentForm = ({ carDetails }) => {
       formState
     )
     setFormState(initialState)
+    getCarDetails()
   }
 
   return (

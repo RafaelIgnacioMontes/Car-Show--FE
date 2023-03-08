@@ -3,11 +3,17 @@
 // import axios from 'axios'
 import Car from './Car'
 import Comment from './Comment'
+import { useEffect } from 'react'
 
-const Home = ({ carList, handleClick }) => {
+const Home = ({ carList, getAllCars }) => {
+  
+  useEffect(() => {
+    getAllCars()
+  }, [])
+  
   return (
     <div>
-      <Car carList={carList} handleClick={handleClick}/>
+      <Car carList={carList}/>
     </div>
   )
 }
