@@ -38,7 +38,6 @@ const CarDetails = ({ user, userCarList }) => {
           <p>{carDetails.color}</p>
           <p>{carDetails.vin}</p>
           <div>
-          <CommentForm carDetails={carDetails} user={user} getCarDetails={getCarDetails}/>
             {carDetails.comments.map((comment) => (
               <div>
                 {comment.car.userName}: {comment.content}
@@ -49,6 +48,6 @@ const CarDetails = ({ user, userCarList }) => {
       </>
     )
   }
-}
+}``
 
 export default CarDetails
