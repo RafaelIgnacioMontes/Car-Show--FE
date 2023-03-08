@@ -16,12 +16,6 @@ const CarDetails = ({ user }) => {
     console.log(carDeets)
   }
 
-  const deleteCar = async () => {
-    const response = await axios.delete(
-      `http://localhost:3001/cars/delete/${id}`
-    )
-    navigate('/')
-  }
   useEffect(() => {
     getCarDetails()
   }, [])
@@ -47,7 +41,6 @@ const CarDetails = ({ user }) => {
         <h1>{carDetails.make} {carDetails.model}</h1>
         <div className="carcard">
           <img src={carDetails.image} alt={'car image'}></img>
-          <button onClick={() => deleteCar()}>Delete</button>
           <p>Make: {carDetails.make}</p>
           <p>Model: {carDetails.model}</p>
           <p>Year: {carDetails.year}</p>
