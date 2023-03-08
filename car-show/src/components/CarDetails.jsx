@@ -8,7 +8,7 @@ const CarDetails = ({ user }) => {
   let { id } = useParams()
   const [showResults, setShowResults] = useState(false)
   const clicky = () => {
-    setShowResults(true)
+    setShowResults((current) => !current)
   }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
@@ -61,17 +61,20 @@ const CarDetails = ({ user }) => {
               <div>
                 {comment.car.userName}:{comment.content}
                 {user?.id === comment?.userId && (
+                  <div>
                   <button onClick={(e) => deleteComment(e, comment.id)}>
                     Delete
                   </button>
+                  <button onClick={()=> clicky()}>Update</button>
+                  </div>
                 )}
                 <div>
-                  {user?.id === comment?.userId && (
+                  {showResults && (
                     <UpdateComment
-                      comment={comment}
-                      getCarDetails={getCarDetails}
+                    comment={comment}
+                    getCarDetails={getCarDetails}
                     />
-                  )}
+                    )}
                 </div>
               </div>
             ))}
