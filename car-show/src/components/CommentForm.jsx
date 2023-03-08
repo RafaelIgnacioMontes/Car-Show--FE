@@ -8,10 +8,11 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
   let { id } = useParams()
   let userId = user.id
 
+  console.log(userId)
   const initialState = {
-    content: '',
+    content: ''
   }
-console.log(id)
+  console.log(id)
   const [formState, setFormState] = useState(initialState)
   const [comment, setComment] = useState()
 
@@ -23,7 +24,7 @@ console.log(id)
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(
-      `${BASE_URL}comment/newcomment/${carDetails.id}`,
+      `${BASE_URL}comment/newcomment/${userId}/${carDetails.id}`,
       formState
     )
     setFormState(initialState)
