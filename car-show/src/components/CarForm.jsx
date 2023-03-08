@@ -25,7 +25,6 @@ const CarForm = ({ user, getUsersCars, userCarList }) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
     setCar(formState.car)
   }
-console.log(formState.car)
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(`${BASE_URL}cars/newcar`, formState)

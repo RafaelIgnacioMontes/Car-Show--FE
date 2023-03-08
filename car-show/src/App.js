@@ -52,7 +52,6 @@ const App = () => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data)
   }
-
   useEffect(() => {
     getUsersCars()
     getAllCars()
@@ -89,7 +88,16 @@ const App = () => {
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
           <Route path="/about" element={<About />} />
-          <Route path="/CarDetails/:id" element={<CarDetails user={user} />} />
+          <Route
+            path="/CarDetails/:id"
+            element={
+              <CarDetails
+                user={user}
+                getUsersCars={getUsersCars}
+                userCarList={userCarList}
+              />
+            }
+          />
         </Routes>
       </main>
     </div>
