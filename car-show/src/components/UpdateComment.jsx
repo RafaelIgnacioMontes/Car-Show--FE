@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 
@@ -9,16 +9,16 @@ const UpdateComment = ({ comment }) => {
 
   const [updateComment, setUpdateComment] = useState()
 
-  useEffect(() => {
-    const getComment = async () => {
-      const response = await axios.get(
-        `http://localhost:3001/comment/${commentId}`
-      )
-      setUpdateComment(response.data.content)
-      console.log(response.data.content)
-    }
-    getComment()
-  }, [commentId])
+  // useEffect(() => {
+  //   const getComment = async () => {
+  //     const response = await axios.get(
+  //       `http://localhost:3001/comment/${commentId}`
+  //     )
+  //     setUpdateComment(response.data.content)
+  //     console.log(response.data.content)
+  //   }
+  //   getComment()
+  // }, [commentId])
 
   const handleChangeUpdate = (event) => {
     setUpdateComment({
@@ -48,7 +48,7 @@ const UpdateComment = ({ comment }) => {
           cols="30"
           rows="8"
           onChange={handleChangeUpdate}
-          value={updateComment.content}
+          // value={updateComment.content}
         />
         <button className="submit-button" type="submit">
           Submit

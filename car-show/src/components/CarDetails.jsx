@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from './CommentForm'
 
@@ -16,7 +16,6 @@ const CarDetails = ({ user, userCarList }) => {
     console.log(carDeets)
   }
 
-<<<<<<< HEAD
   const deleteCar = async (e) => {
     e.preventDefault()
      await axios.delete(
@@ -25,24 +24,24 @@ const CarDetails = ({ user, userCarList }) => {
     navigate('/')
   }
 
-  const deleteComment = async (e) => {
+  const updateComment = async (e, commentId) => {
     e.preventDefault()
      await axios.delete(
-      `http://localhost:3001/delete/${carDetails.comments.id}`
+      `http://localhost:3001/update/${commentId}`
     )
     navigate('/')
   }
 
   // console.log(carDetails.comments)
 
-=======
->>>>>>> 5fc0fa179d72dbd17508869eeb9c852a0a8f74b3
   useEffect(() => {
     if (user){
 
   
     getCarDetails()
-  }, [])
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user])
 
   let userOptions
   if (user) {
@@ -63,8 +62,6 @@ const CarDetails = ({ user, userCarList }) => {
     return (
       <>
         <h1>This Car</h1>
-      <div>
-        <h1>{carDetails.make} {carDetails.model}</h1>
         <div className="carcard">
           < img src={carDetails?.image} alt={carDetails?.model}></img>
           <button onClick={(e) => deleteCar(e)}>Delete</button>
@@ -73,31 +70,28 @@ const CarDetails = ({ user, userCarList }) => {
           <p>{carDetails?.year}</p>
           <p>{carDetails?.color}</p>
           <p>{carDetails?.vin}</p>
-          <img src={carDetails.image} alt={'car image'}></img>
-          <p>Make: {carDetails.make}</p>
-          <p>Model: {carDetails.model}</p>
-          <p>Year: {carDetails.year}</p>
-          <p>Color: {carDetails.color}</p>
-          <p>VIN: {carDetails.vin}</p>
           <div>
-            <CommentForm
-              carDetails={carDetails}
-              user={user}
-              getCarDetails={getCarDetails}
-            />
+           
             {carDetails?.comments?.map((comment) => (
               <div>
-
-                {/* <button onClick={(e)=> deleteComment(e)}>Delete </button> */}
+                {/* <button onClick={(e)=> updateComment(e)}>Update Comment </button> */}
                 {comment.car.userName}: {comment.content}
+                {user?.id === comment?.userId && (
+                <div>
+                <button>delete</button>
 
-        
-              </div>
-            <h5>Comments</h5>
-            {carDetails.comments.map((comment) => (
-            <div>
-                {comment.car.userName} :{comment.content}
+
+                <Link to={`/update/${comment._id}/updateComment`}>
+                    <button className='addReview-btn'>Add Review</button>
+                </Link>
+
+                <button onClick={() => {updateComment()}}>Update</button>
+                
+                
                 </div>
+              )}
+              </div>
+              
             ))}
             </div>
             <div>

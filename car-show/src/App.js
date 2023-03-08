@@ -11,7 +11,7 @@ import User from './components/User'
 import axios from 'axios'
 import CarDetails from './components/CarDetails'
 // import CommentForm from './components/CommentForm'
-// import UpdateComment from './components/UpdateComment'
+import UpdateComment from './components/UpdateComment'
 
 const App = () => {
   const [userCarList, setUserCarList] = useState([])
@@ -56,13 +56,6 @@ const App = () => {
     setComments(response.data)
   }
 
-<<<<<<< HEAD
-  // const deleteCar = async () => {
-  //   const response = await axios.delete('http://localhost:3001/delete/')
-  // }
-
-=======
->>>>>>> 5fc0fa179d72dbd17508869eeb9c852a0a8f74b3
   useEffect(() => {
     getUsersCars()
     getAllCars()
@@ -95,6 +88,8 @@ const App = () => {
               />
             }
           />
+
+          <Route path="/updateComment/" element={<UpdateComment />} />
 
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />
