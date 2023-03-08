@@ -28,7 +28,7 @@ const CarDetails = ({ user, userCarList }) => {
 
   if (isLoaded) {
     return (
-      <>
+      <>``
         <h1>This Car</h1>
         <div className="carcard">
           <img src={carDetails.image} alt={'car image'}></img>

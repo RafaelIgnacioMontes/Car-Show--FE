@@ -9,6 +9,7 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
   let userId = user.id
 
   const initialState = {
+    userId,
     content: '',
   }
 console.log(id)
