@@ -38,7 +38,6 @@ const CarDetails = ({ user }) => {
           <p>{carDetails.year}</p>
           <p>{carDetails.color}</p>
           <p>{carDetails.vin}</p>
-          <CommentForm carDetails={carDetails} />
           <div>
             <CommentForm
               carDetails={carDetails}
