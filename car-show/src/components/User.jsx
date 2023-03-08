@@ -12,7 +12,10 @@ const User = ({ user, userCarList, getUsersCars }) => {
     setAddingCar((current) => !current)
   }
 
-  const deleteCar = async () => {
+  console.log(userCarList)
+
+  const deleteCar = async (e) => {
+    e.preventDefault()
     const response = await axios.delete(
       `http://localhost:3001/cars/delete/${userCarList.id}`
     )
@@ -29,7 +32,7 @@ const User = ({ user, userCarList, getUsersCars }) => {
       <h1>Your Collection</h1>
       <div>
         {userCarList.map((cars) => (
-          <div className="User-Car-Card">
+          <div className="User-Car-Card" key={cars.id}>
             <img src={cars.image} alt="car image" />
             <p className="make">Make: {cars.make}</p>
             <p className="model">Model: {cars.model}</p>
