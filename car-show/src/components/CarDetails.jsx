@@ -26,10 +26,11 @@ const CarDetails = ({ user, userCarList }) => {
   useEffect(() => {
     if (user){
 
-  
+   
     getCarDetails()
+  }
   }, [user])
-
+ }
   let userOptions
   if (user) {
     userOptions = (
@@ -81,9 +82,9 @@ const CarDetails = ({ user, userCarList }) => {
           </div>
           <div>{user ? userOptions : publicOptions}</div>
         </div>
-      </>
+      </div>
     )
   }
-}
+
 
 export default CarDetails
