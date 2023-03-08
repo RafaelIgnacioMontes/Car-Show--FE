@@ -58,7 +58,7 @@ const CarDetails = ({ user }) => {
             <h5>Comments</h5>
             {carDetails.comments.map((comment) => (
               <div>
-                {comment.car.userName} :{comment.content}
+                {comment.car.userName}:{comment.content}
               </div>
             ))}
           </div>
