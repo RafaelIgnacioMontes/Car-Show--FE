@@ -38,8 +38,10 @@ const App = () => {
     }
   }, [])
   const getUsersCars = async () => {
-    const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
-    setUserCarList(cars.data)
+    if (user !== null) {
+      const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
+      setUserCarList(cars.data)
+    }
   }
 
   const getAllCars = async () => {
@@ -52,9 +54,9 @@ const App = () => {
   }
 
   useEffect(() => {
+    getUsersCars()
     getAllCars()
     getAllComments()
-    getUsersCars()
   }, [])
 
   return (

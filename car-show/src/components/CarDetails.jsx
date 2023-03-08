@@ -12,9 +12,9 @@ const CarDetails = ({ user }) => {
     const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
     setCarDetails(carDeets.data)
     setIsLoaded(true)
-    console.log(carDeets)
+    console.log(carDeets.data)
   }
-  console.log(carDetails)
+
   useEffect(() => {
     getCarDetails()
   }, [])
@@ -23,7 +23,7 @@ const CarDetails = ({ user }) => {
     return (
       <>
         <h1>This Car</h1>
-        <div className="carcard">
+        <div className="carcard" key={carDetails.id}>
           <img src={carDetails.image} alt={'car image'}></img>
           <p>{carDetails.make}</p>
           <p>{carDetails.model}</p>
