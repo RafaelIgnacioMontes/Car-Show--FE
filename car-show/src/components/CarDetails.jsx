@@ -73,6 +73,7 @@ const CarDetails = ({ user }) => {
                     <UpdateComment
                     comment={comment}
                     getCarDetails={getCarDetails}
+                    clicky={clicky}
                     />
                     )}
                 </div>

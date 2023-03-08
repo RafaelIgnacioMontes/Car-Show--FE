@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const UpdateComment = ({ comment, getCarDetails }) => {
+const UpdateComment = ({ comment, getCarDetails, clicky }) => {
   console.log(comment)
 
   const [updateComment, setUpdateComment] = useState({
@@ -23,6 +23,7 @@ const UpdateComment = ({ comment, getCarDetails }) => {
       updateComment
     )
     getCarDetails()
+    clicky()
   }
 
   return (
@@ -34,6 +35,7 @@ const UpdateComment = ({ comment, getCarDetails }) => {
           id="content"
           cols="80"
           rows="2"
+          placeholder={comment.content}
           onChange={handleChangeUpdate}
           value={updateComment.content}
         />
