@@ -39,14 +39,29 @@ const CarDetails = ({ user, userCarList }) => {
 
   
     getCarDetails()
-  }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user])
+  }, [])
+
+  let userOptions
+  if (user) {
+    userOptions = (
+      <div>
+      <CommentForm
+        carDetails={carDetails}
+        user={user}
+        getCarDetails={getCarDetails}
+        />
+      </div>
+    )}
+    const publicOptions = (
+        <div></div>
+      )
 
   if (isLoaded) {
     return (
-      <>``
+      <>
         <h1>This Car</h1>
+      <div>
+        <h1>{carDetails.make} {carDetails.model}</h1>
         <div className="carcard">
           < img src={carDetails?.image} alt={carDetails?.model}></img>
           <button onClick={(e) => deleteCar(e)}>Delete</button>
@@ -55,6 +70,13 @@ const CarDetails = ({ user, userCarList }) => {
           <p>{carDetails?.year}</p>
           <p>{carDetails?.color}</p>
           <p>{carDetails?.vin}</p>
+          <img src={carDetails.image} alt={'car image'}></img>
+          <button onClick={() => deleteCar()}>Delete</button>
+          <p>Make: {carDetails.make}</p>
+          <p>Model: {carDetails.model}</p>
+          <p>Year: {carDetails.year}</p>
+          <p>Color: {carDetails.color}</p>
+          <p>VIN: {carDetails.vin}</p>
           <div>
             <CommentForm
               carDetails={carDetails}
@@ -66,7 +88,15 @@ const CarDetails = ({ user, userCarList }) => {
                 {/* <button onClick={(e)=> deleteComment(e)}>Delete </button> */}
                 {comment.car.userName}: {comment.content}
               </div>
+            <h5>Comments</h5>
+            {carDetails.comments.map((comment) => (
+            <div>
+                {comment.car.userName} :{comment.content}
+                </div>
             ))}
+            </div>
+            <div>
+          {user ? userOptions: publicOptions}    
           </div>
         </div>
       </>
