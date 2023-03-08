@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from './CommentForm'
 import UpdateComment from './UpdateComment'
 
 const CarDetails = ({ user }) => {
   let { id } = useParams()
-  let navigate = useNavigate()
+  const [showResults, setShowResults] = useState(false)
+  const clicky = () => {
+    setShowResults(true)
+  }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
   const [updating, setUpdating] = useState(false)
@@ -16,46 +19,35 @@ const CarDetails = ({ user }) => {
     setCarDetails(carDeets.data)
     setIsLoaded(true)
   }
-
   const deleteComment = async (e, commentId) => {
     e.preventDefault()
-    const result = await axios.delete(
-      `http://localhost:3001/comment/delete/${commentId}`
-    )
+    await axios.delete(`http://localhost:3001/comment/delete/${commentId}`)
     getCarDetails()
   }
-
-  const updateComment = async (commentId) => {
-    await axios.put(`http://localhost:3001/comment/update/${commentId}`, )
-  }
-
   useEffect(() => {
     getCarDetails()
   }, [])
-
-  const updatingComment = () => {
-    setUpdating(true)
-  }
 
   let userOptions
   if (user) {
     userOptions = (
       <div>
-      <CommentForm
-        carDetails={carDetails}
-        user={user}
-        getCarDetails={getCarDetails}
+        <CommentForm
+          carDetails={carDetails}
+          user={user}
+          getCarDetails={getCarDetails}
         />
       </div>
-    )}
-    const publicOptions = (
-        <div></div>
-      )
+    )
+  }
+  const publicOptions = <div></div>
 
   if (isLoaded) {
     return (
       <div>
-        <h1>{carDetails?.make} {carDetails?.model}</h1>
+        <h1>
+          {carDetails.make} {carDetails.model}
+        </h1>
         <div className="carcard">
           <img src={carDetails?.image} alt={'car image'}></img>
           <p>Make: {carDetails?.make}</p>
@@ -65,23 +57,26 @@ const CarDetails = ({ user }) => {
           <p>VIN: {carDetails?.vin}</p>
           <div>
             <h5>Comments</h5>
-            {carDetails?.comments?.map((comment) => (
-            <div>
-                {comment.car.userName}: {comment.content}
-              {user?.id === comment?.userId && (
+            {carDetails.comments.map((comment) => (
+              <div>
+                {comment.car.userName}:{comment.content}
+                {user?.id === comment?.userId && (
+                  <button onClick={(e) => deleteComment(e, comment.id)}>
+                    Delete
+                  </button>
+                )}
                 <div>
-                <button onClick={(e)=>deleteComment(e, comment.id)}
-                >delete</button>
-                <button>update</button>
-                {/* <UpdateComment /> */}
+                  {user?.id === comment?.userId && (
+                    <UpdateComment
+                      comment={comment}
+                      getCarDetails={getCarDetails}
+                    />
+                  )}
                 </div>
-              )}
-                </div>
+              </div>
             ))}
-            </div>
-            <div>
-          {user ? userOptions: publicOptions}    
           </div>
+          <div>{user ? userOptions : publicOptions}</div>
         </div>
       </div>
     )

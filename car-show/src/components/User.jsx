@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
 import CarForm from './CarForm'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
 
 const User = ({ user, userCarList, getUsersCars }) => {
-  let navigate = useNavigate()
-
   const [addingCar, setAddingCar] = useState(false)
 
   const addCar = () => {
@@ -14,10 +11,7 @@ const User = ({ user, userCarList, getUsersCars }) => {
 
   const deleteCar = async (e, carsId) => {
     e.preventDefault()
-    console.log(carsId)
-    const result = await axios.delete(
-      `http://localhost:3001/cars/delete/${carsId}`
-    )
+    await axios.delete(`http://localhost:3001/cars/delete/${carsId}`)
     getUsersCars()
   }
 
@@ -37,7 +31,7 @@ const User = ({ user, userCarList, getUsersCars }) => {
             <p className="year">Year Built: {cars?.year}</p>
             <p className="vin">VIN: {cars?.vin}</p>
             <p className="color">Color: {cars?.color}</p>
-            <button onClick={(e)=>deleteCar(e, cars.id)}>Delete</button>
+            <button onClick={(e) => deleteCar(e, cars.id)}>Delete</button>
           </div>
         ))}
       </div>
