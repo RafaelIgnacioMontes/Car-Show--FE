@@ -18,7 +18,7 @@ const CarDetails = ({ user }) => {
 
   const deleteCar = async () => {
     const response = await axios.delete(
-      `http://localhost:3001/cars/delete/${id}`
+      `http://localhost:3001/cars/delete/${carDetails.id}`
     )
     navigate('/')
   }
@@ -44,11 +44,6 @@ const CarDetails = ({ user }) => {
               user={user}
               getCarDetails={getCarDetails}
             />
-            {carDetails.comments.map((comment) => (
-              <div>
-                {comment.car.userName} :{comment.content}
-              </div>
-            ))}
           </div>
         </div>
       </div>

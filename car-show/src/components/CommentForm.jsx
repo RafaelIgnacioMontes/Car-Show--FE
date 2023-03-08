@@ -25,7 +25,7 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post(
-      `${BASE_URL}comment/newcomment/${userId}/${carDetails.id}`,
+      `${BASE_URL}comment/newcomment/${carDetails.id}`,
       formState
     )
     setFormState(initialState)
