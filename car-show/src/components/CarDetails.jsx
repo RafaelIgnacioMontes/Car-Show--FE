@@ -26,25 +26,43 @@ const CarDetails = ({ user }) => {
     getCarDetails()
   }, [])
 
+  let userOptions
+  if (user) {
+    userOptions = (
+      <div>
+        <CommentForm
+          carDetails={carDetails}
+          user={user}
+          getCarDetails={getCarDetails}
+        />
+      </div>
+    )
+  }
+  const publicOptions = <div></div>
+
   if (isLoaded) {
     return (
       <div>
-        <h1>This Car</h1>
+        <h1>
+          {carDetails.make} {carDetails.model}
+        </h1>
         <div className="carcard">
           <img src={carDetails.image} alt={'car image'}></img>
           <button onClick={() => deleteCar()}>Delete</button>
-          <p>{carDetails.make}</p>
-          <p>{carDetails.model}</p>
-          <p>{carDetails.year}</p>
-          <p>{carDetails.color}</p>
-          <p>{carDetails.vin}</p>
+          <p>Make: {carDetails.make}</p>
+          <p>Model: {carDetails.model}</p>
+          <p>Year: {carDetails.year}</p>
+          <p>Color: {carDetails.color}</p>
+          <p>VIN: {carDetails.vin}</p>
           <div>
-            <CommentForm
-              carDetails={carDetails}
-              user={user}
-              getCarDetails={getCarDetails}
-            />
+            <h5>Comments</h5>
+            {carDetails.comments.map((comment) => (
+              <div>
+                {comment.car.userName} :{comment.content}
+              </div>
+            ))}
           </div>
+          <div>{user ? userOptions : publicOptions}</div>
         </div>
       </div>
     )
