@@ -12,17 +12,18 @@ const User = ({ user, userCarList, getUsersCars }) => {
     setAddingCar((current) => !current)
   }
 
-  const deleteCar = async () => {
-    const response = await axios.delete(
-      `http://localhost:3001/cars/delete/${userCarList.id}`
+  const deleteCar = async (e, carsId) => {
+    e.preventDefault()
+    console.log(carsId)
+    const result = await axios.delete(
+      `http://localhost:3001/cars/delete/${carsId}`
     )
-    navigate('/User')
+    getUsersCars()
   }
 
   useEffect(() => {
     getUsersCars()
-    deleteCar()
-  }, [])
+  }, [user])
 
   return (
     <div>
@@ -30,13 +31,13 @@ const User = ({ user, userCarList, getUsersCars }) => {
       <div>
         {userCarList.map((cars) => (
           <div className="User-Car-Card">
-            <img src={cars.image} alt="car image" />
-            <p className="make">Make: {cars.make}</p>
-            <p className="model">Model: {cars.model}</p>
-            <p className="year">Year Built: {cars.year}</p>
-            <p className="vin">VIN: {cars.vin}</p>
-            <p className="color">Color: {cars.color}</p>
-            <button onClick={() => deleteCar()}>Delete</button>
+            <img src={cars?.image} alt="car image" />
+            <p className="make">Make: {cars?.make}</p>
+            <p className="model">Model: {cars?.model}</p>
+            <p className="year">Year Built: {cars?.year}</p>
+            <p className="vin">VIN: {cars?.vin}</p>
+            <p className="color">Color: {cars?.color}</p>
+            <button onClick={(e)=>deleteCar(e, cars.id)}>Delete</button>
           </div>
         ))}
       </div>

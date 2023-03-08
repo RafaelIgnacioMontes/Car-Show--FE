@@ -16,6 +16,7 @@ const CarDetails = ({ user, userCarList }) => {
     console.log(carDeets)
   }
 
+<<<<<<< HEAD
   const deleteCar = async (e) => {
     e.preventDefault()
      await axios.delete(
@@ -34,6 +35,8 @@ const CarDetails = ({ user, userCarList }) => {
 
   // console.log(carDetails.comments)
 
+=======
+>>>>>>> 5fc0fa179d72dbd17508869eeb9c852a0a8f74b3
   useEffect(() => {
     if (user){
 
@@ -71,7 +74,6 @@ const CarDetails = ({ user, userCarList }) => {
           <p>{carDetails?.color}</p>
           <p>{carDetails?.vin}</p>
           <img src={carDetails.image} alt={'car image'}></img>
-          <button onClick={() => deleteCar()}>Delete</button>
           <p>Make: {carDetails.make}</p>
           <p>Model: {carDetails.model}</p>
           <p>Year: {carDetails.year}</p>

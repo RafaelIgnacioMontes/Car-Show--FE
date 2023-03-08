@@ -56,10 +56,13 @@ const App = () => {
     setComments(response.data)
   }
 
+<<<<<<< HEAD
   // const deleteCar = async () => {
   //   const response = await axios.delete('http://localhost:3001/delete/')
   // }
 
+=======
+>>>>>>> 5fc0fa179d72dbd17508869eeb9c852a0a8f74b3
   useEffect(() => {
     getUsersCars()
     getAllCars()
