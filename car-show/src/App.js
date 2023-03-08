@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import './App.css'
@@ -10,8 +10,8 @@ import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
 import CarDetails from './components/CarDetails'
-import CommentForm from './components/CommentForm'
-import UpdateComment from './components/UpdateComment'
+// import CommentForm from './components/CommentForm'
+// import UpdateComment from './components/UpdateComment'
 
 const App = () => {
   const [userCarList, setUserCarList] = useState([])
@@ -56,9 +56,9 @@ const App = () => {
     setComments(response.data)
   }
 
-  const deleteCar = async () => {
-    const response = await axios.delete('http://localhost:3001/delete/')
-  }
+  // const deleteCar = async () => {
+  //   const response = await axios.delete('http://localhost:3001/delete/')
+  // }
 
   useEffect(() => {
     getUsersCars()
