@@ -6,7 +6,7 @@ const UpdateComment = ({ comment, getCarDetails, clicky }) => {
   console.log(comment)
 
   const [updateComment, setUpdateComment] = useState({
-    content: ''
+    content: comment.content
   })
 
   const handleChangeUpdate = (event) => {
