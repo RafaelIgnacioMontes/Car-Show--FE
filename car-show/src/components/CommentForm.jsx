@@ -12,7 +12,7 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
     userId,
     content: '',
   }
-console.log(id)
+
   const [formState, setFormState] = useState(initialState)
   const [comment, setComment] = useState()
 
