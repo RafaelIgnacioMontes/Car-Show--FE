@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CommentForm from './CommentForm'
 import UpdateComment from './UpdateComment'
+import Client from '../services/api'
 
 const CarDetails = ({ user }) => {
   let { id } = useParams()
-  const [showResults, setShowResults] = useState(false)
-  const clicky = () => {
-    setShowResults(true)
-  }
+  // const [showResults, setShowResults] = useState(false)
+  // const clicky = () => {
+  //   setShowResults((current) => !current)
+  // }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -20,7 +21,7 @@ const CarDetails = ({ user }) => {
   }
   const deleteComment = async (e, commentId) => {
     e.preventDefault()
-    await axios.delete(`http://localhost:3001/comment/delete/${commentId}`)
+    await Client.delete(`http://localhost:3001/comment/delete/${commentId}`)
     getCarDetails()
   }
   useEffect(() => {
