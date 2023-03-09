@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Car = ({ carList }) => {
   return (
-    <div>
+    <div cla ssName="generalpage">
       <h1 className="Title"> Car Collection </h1>
       <div className="column1">
         {carList.map(

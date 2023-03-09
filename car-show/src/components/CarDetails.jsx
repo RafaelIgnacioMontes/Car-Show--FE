@@ -18,6 +18,7 @@ const CarDetails = ({ user }) => {
     setCarDetails(carDeets.data)
     setIsLoaded(true)
   }
+  console.log(carDetails)
   const deleteComment = async (e, commentId) => {
     e.preventDefault()
     await Client.delete(`http://localhost:3001/comment/delete/${commentId}`)
@@ -41,38 +42,56 @@ const CarDetails = ({ user }) => {
   const publicOptions = <div></div>
   if (isLoaded) {
     return (
-      <div>
-        <h1>
+      <div className="wholepage">
+        <h1 className="detailsheader">
           {carDetails.make} {carDetails.model}
         </h1>
-        <div className="carcard">
-          <img src={carDetails?.image} alt={'car image'}></img>
-          <p>Make: {carDetails?.make}</p>
-          <p>Model: {carDetails?.model}</p>
-          <p>Year: {carDetails?.year}</p>
-          <p>Color: {carDetails?.color}</p>
-          <p>VIN: {carDetails?.vin}</p>
-          <div>
-            <h5>Comments</h5>
+        <div className="thecar">
+          <img
+            src={carDetails?.image}
+            alt={'car image'}
+            className="picture"
+          ></img>
+          <div className="fontbackground">
+            <p>Owner: {carDetails?.owner.userName}</p>
+          </div>
+          <div className="fontbackground">
+            <p>Make: {carDetails?.make}</p>
+          </div>
+          <div className="fontbackground">
+            <p>Model: {carDetails?.model}</p>
+          </div>
+          <div className="fontbackground">
+            <p>Year: {carDetails?.year}</p>
+          </div>
+          <div className="fontbackground">
+            <p>Color: {carDetails?.color}</p>
+          </div>
+          <div className="fontbackground">
+            <p>VIN: {carDetails?.vin}</p>
+          </div>
+          <div className="commentsedit">
+            <h3>Comments</h3>
             {carDetails.comments.map((comment) => (
               <div>
                 {comment.car.userName}:{comment.content}
                 {user?.id === comment?.userId && (
                   <div>
-                  <button onClick={(e) => deleteComment(e, comment.id)}>
-                    Delete
-                  </button>
-                  <button onClick={()=> clicky()}>Update</button>
+                    <button onClick={(e) => deleteComment(e, comment.id)}>
+                      Delete
+                    </button>
+                    <button onClick={() => clicky()}>Update</button>
                   </div>
                 )}
                 <div>
+                  <div></div>
                   {showResults && (
                     <UpdateComment
-                    comment={comment}
-                    getCarDetails={getCarDetails}
-                    clicky={clicky}
+                      comment={comment}
+                      getCarDetails={getCarDetails}
+                      clicky={clicky}
                     />
-                    )}
+                  )}
                 </div>
               </div>
             ))}
