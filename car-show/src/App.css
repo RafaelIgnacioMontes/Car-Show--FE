@@ -11,7 +11,22 @@ header {
   z-index: 5;
   width: 100%;
 }
-
+.generalpage {
+  display: flex;
+  flex-direction: row;
+}
+.column1 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin: 10px 5px 15px 10px;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin: 10px 10px 15px 5px;
+}
 .homeAbout {
   display: flex;
   flex-wrap: wrap;
@@ -99,10 +114,9 @@ section img {
 .welcomemessage {
   color: beige;
 }
-.Car-Card{
+.Car-Card {
   position: relative;
   text-align: center;
-  
 }
 .Car-Card img {
   object-fit: cover;
@@ -117,7 +131,7 @@ section img {
   width: 40vw;
 }
 .Car-Card p {
-position: absolute;
+  position: absolute;
   top: 75%;
   left: 50%;
   font-size: 30px;
