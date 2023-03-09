@@ -74,7 +74,7 @@ const CarDetails = ({ user }) => {
             <h3 class="commentTxt">Comments</h3>
             {carDetails.comments.map((comment) => (
 
-              <div>
+              <div class="ontext">
                 {comment.car.userName}: {comment.content}
 
                 {user?.id === comment?.userId && (
@@ -86,14 +86,15 @@ const CarDetails = ({ user }) => {
                   </div>
                 )}
                 <div>
-                  <div></div>
+                  <div>
                   {showResults && (
                     <UpdateComment
                       comment={comment}
                       getCarDetails={getCarDetails}
                       clicky={clicky}
                     />
-                  )}
+                    )}
+                 </div>
                 </div>
               </div>
             ))}
