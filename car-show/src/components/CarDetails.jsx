@@ -26,12 +26,8 @@ const CarDetails = ({ user, userCarList }) => {
     getCarDetails()
   }
   useEffect(() => {
-<<<<<<< HEAD
-    if (user){
-=======
     getCarDetails()
   }, [])
->>>>>>> 6107e9d17813bcc8224cb54896f01b94311b4277
 
    
     getCarDetails()
@@ -59,22 +55,12 @@ const CarDetails = ({ user, userCarList }) => {
           {carDetails.make} {carDetails.model}
         </h1>
         <div className="carcard">
-<<<<<<< HEAD
-          < img src={carDetails?.image} alt={carDetails?.model}></img>
-          {/* <button onClick={(e) => deleteCar(e)}>Delete</button> */}
-          <p>{carDetails?.make}</p>
-          <p>{carDetails?.model}</p>
-          <p>{carDetails?.year}</p>
-          <p>{carDetails?.color}</p>
-          <p>{carDetails?.vin}</p>
-=======
           <img src={carDetails?.image} alt={'car image'}></img>
           <p>Make: {carDetails?.make}</p>
           <p>Model: {carDetails?.model}</p>
           <p>Year: {carDetails?.year}</p>
           <p>Color: {carDetails?.color}</p>
           <p>VIN: {carDetails?.vin}</p>
->>>>>>> 6107e9d17813bcc8224cb54896f01b94311b4277
           <div>
             <h5>Comments</h5>
             {carDetails.comments.map((comment) => (
