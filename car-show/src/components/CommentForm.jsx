@@ -44,7 +44,7 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
           value={formState.content}
         />
         <button className="submit-button" type="submit">
-          Submit
+          Add Comment
         </button>
       </form>
     </div>
