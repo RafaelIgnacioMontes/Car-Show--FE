@@ -1,3 +1,6 @@
+main {
+  margin: 0;
+}
 body {
   margin-top: 9vh;
 }
@@ -11,7 +14,55 @@ header {
   z-index: 5;
   width: 100%;
 }
-.generalpage {
+
+.wholepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.detailsheader {
+  text-align: center;
+}
+.thecar {
+  margin: 10px;
+  border-radius: 10%;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
+  background-color: #131313;
+  background-size: 20px 20px;
+  max-width: fit-content;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  text-align: center;
+}
+.thecar p {
+  /* background-color: #000; */
+  color: gold;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.fontbackground {
+  background: #443f3f;
+  margin: 5px;
+  border-top-style: solid;
+  border-color: gold;
+  /* background-color: #000; */
+}
+.font .generalpage {
   display: flex;
   flex-direction: row;
 }
@@ -56,6 +107,16 @@ header {
 .car-show {
   margin: 0 1vw;
   color: beige;
+}
+
+.commentsedit {
+  border-top-color: gold;
+  border-style: solid;
+  background-color: #443f3f;
+  margin: 5px;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
 header nav a {
@@ -140,8 +201,6 @@ section img {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
-<<<<<<< HEAD
-=======
 
 .comment-form {
   display: flex;
@@ -149,22 +208,13 @@ section img {
   justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-.center{
+.center {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-button{
+button {
   display: block;
   width: 14rem;
   height: 3.5rem;
@@ -176,26 +226,34 @@ button{
   letter-spacing: 2px;
   text-align: center;
   position: relative;
-  transition: all .4s;
+  transition: all 0.4s;
 }
-Button span{
+.picture {
+  background-color: #272626;
+  padding: 5px;
+  display: flex;
+  object-fit: scale-down;
+  max-height: fit-content;
+  max-width: fit-content;
+  border-radius: 10%;
+}
+Button span {
   position: relative;
   z-index: 2;
 }
-button:after{
+button:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 0;
   height: 100%;
   background: #ff003b;
-  transition: all .35s;
+  transition: all 0.35s;
 }
-button:hover{
+button:hover {
   color: #fff;
 }
-button:hover:after{
+button:hover:after {
   width: 100%;
 }
->>>>>>> 3255df11745cf2eee8592ae23c9df03ed77872b5
