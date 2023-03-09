@@ -20,7 +20,7 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(user.id)
-    await Client.put(`http://localhost:3001/auth/update/${user.id}`)
+    await Client.put(`http://localhost:3001/auth/update/${user.id}`, formValues)
     setFormValues(initialState)
     handleLogOut()
     navigate('/signin')

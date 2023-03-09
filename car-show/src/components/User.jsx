@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import CarForm from './CarForm'
-import axios from 'axios'
+import Client from '../services/api'
 
 const User = ({ user, userCarList, getUsersCars }) => {
   const [addingCar, setAddingCar] = useState(false)
@@ -11,7 +11,7 @@ const User = ({ user, userCarList, getUsersCars }) => {
 
   const deleteCar = async (e, carsId) => {
     e.preventDefault()
-    await axios.delete(`http://localhost:3001/cars/delete/${carsId}`)
+    await Client.delete(`http://localhost:3001/cars/delete/${carsId}`)
     getUsersCars()
   }
 

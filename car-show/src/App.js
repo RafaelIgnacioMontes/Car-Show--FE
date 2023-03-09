@@ -105,7 +105,10 @@ const App = () => {
             path="/updatePassword"
             element={<ChangePasswordForm user={user} />}
           />
-          <Route path="/UserSettings" element={<UserSettings user={user} />} />
+          <Route
+            path="/UserSettings"
+            element={<UserSettings user={user} handleLogOut={handleLogOut} />}
+          />
         </Routes>
       </main>
     </div>
