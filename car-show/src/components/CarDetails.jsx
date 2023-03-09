@@ -48,6 +48,10 @@ const CarDetails = ({ user }) => {
       </div>
     )
   }
+  let commentId = carDetails?.comments?.map((comment) => {
+    return comment.id
+  })
+
   const publicOptions = <div></div>
   if (isLoaded) {
     return (
@@ -107,6 +111,15 @@ const CarDetails = ({ user }) => {
                 )}
               </div>
             ))}
+            <div>
+              {showResults && (
+                <UpdateComment
+                  commentId={commentId}
+                  getCarDetails={getCarDetails}
+                  clicky={clicky}
+                />
+              )}
+            </div>
           </div>
           <div>{user ? userOptions : publicOptions}</div>
         </div>
