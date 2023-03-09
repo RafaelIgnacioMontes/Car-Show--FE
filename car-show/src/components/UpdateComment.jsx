@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
+import Client from '../services/api'
 
-const UpdateComment = ({ comment, getCarDetails }) => {
+const UpdateComment = ({ comment, getCarDetails, token }) => {
   console.log(comment)
 
   const [updateComment, setUpdateComment] = useState({
@@ -18,7 +19,7 @@ const UpdateComment = ({ comment, getCarDetails }) => {
 
   const handleSubmitUpdate = async (event) => {
     event.preventDefault()
-    await axios.put(
+    await Client.put(
       `http://localhost:3001/comment/update/${comment.id}`,
       updateComment
     )
