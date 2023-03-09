@@ -73,8 +73,10 @@ const CarDetails = ({ user }) => {
           <div class="commentsedit">
             <h3 class="commentTxt">Comments</h3>
             {carDetails.comments.map((comment) => (
-              <div class="commentSection">
-                {comment.car.userName}:{comment.content}
+
+              <div>
+                {comment.car.userName}: {comment.content}
+
                 {user?.id === comment?.userId && (
                   <div>
                     <button class="commentDelete-btn" onClick={(e) => deleteComment(e, comment.id)}>

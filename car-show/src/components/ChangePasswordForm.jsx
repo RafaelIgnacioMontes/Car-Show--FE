@@ -26,8 +26,12 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
     navigate('/signin')
   }
   return (
-    <div className="updatepass col">
+    <div className='signinPage'>
+
+    <div className="signin">
       <div className="card-overlay centered">
+        <div className='signinForm'>
+
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper-update">
             <label htmlFor="userName">Username</label>
@@ -38,7 +42,7 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
               placeholder="Username"
               value={formValues.userName}
               required
-            />
+              />
           </div>
           <div className="input-wrapper">
             <label htmlFor="email">Email</label>
@@ -49,7 +53,7 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
               placeholder="example@example.com"
               value={formValues.email}
               required
-            />
+              />
           </div>
 
           <div className="input-wrapper">
@@ -60,7 +64,7 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
               name="oldPassword"
               value={formValues.oldPassword}
               required
-            />
+              />
           </div>
           <div className="input-wrapper">
             <label htmlFor="newPassword">New Password</label>
@@ -70,12 +74,14 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
               name="newPassword"
               value={formValues.newPassword}
               required
-            />
+              />
           </div>
           <button type="submit">Change Password</button>
         </form>
+        </div>
       </div>
     </div>
+  </div>
   )
 }
 
