@@ -22,6 +22,11 @@ const Header = ({ user, handleLogOut }) => {
             My Page
           </Link>
         </div>
+        <div className="Nav">
+          <Link to="/UserSettings" className="UserSettings">
+            User Settings
+          </Link>
+        </div>
       </div>
     )
   }
