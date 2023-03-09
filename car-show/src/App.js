@@ -10,7 +10,8 @@ import { CheckSession } from './services/Auth'
 import User from './components/User'
 import axios from 'axios'
 import CarDetails from './components/CarDetails'
-// import CommentForm from './components/CommentForm'
+import ChangePasswordForm from './components/ChangePasswordForm'
+import UserSettings from './components/UserSettings'
 import UpdateComment from './components/UpdateComment'
 
 const App = () => {
@@ -104,6 +105,11 @@ const App = () => {
               />
             }
           />
+          <Route
+            path="/updatePassword"
+            element={<ChangePasswordForm user={user} />}
+          />
+          <Route path="/UserSettings" element={<UserSettings user={user} />} />
         </Routes>
       </main>
     </div>

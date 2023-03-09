@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Client from '../services/api'
 
 const BASE_URL = `http://localhost:3001/`
 
@@ -12,7 +13,6 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
     userId,
     content: ''
   }
-  console.log(id)
   const [formState, setFormState] = useState(initialState)
   const [comment, setComment] = useState()
 
@@ -23,7 +23,7 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(
+    await Client.post(
       `${BASE_URL}comment/newcomment/${carDetails.id}`,
       formState
     )
