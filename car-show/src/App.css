@@ -7,7 +7,7 @@ body {
 header {
   background-color: #141265;
   align-items: center;
-  height: 3.5em;
+  height: 4em;
   position: fixed;
   top: 0;
   left: 0;
@@ -152,10 +152,10 @@ header nav a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 50vh;
-  width: 40vw;
+  height: 40vh;
+  width: 35vw;
   border-radius: 40%;
-  padding-top: 8vh;
+  padding-top: 5vh;
   padding-bottom: 8vh;
 }
 .team {
@@ -175,31 +175,97 @@ section img {
 .welcomemessage {
   color: beige;
 }
-.Car-Card {
-  position: relative;
+
+.Car-Card{
+display: flex;
+flex-direction: row;
+flex-basis: 50%;
+margin-left: 10%;
+margin-right: 10%;
+}
+
+.generalPage {
+  display: grid;
+  text-align: center;
+}
+.Title {
+  position: center;
+
   text-align: center;
 }
 .Car-Card img {
   object-fit: cover;
-  height: 50vh;
+  height: 40vh;
   width: 35vw;
   border-radius: 10%;
 }
 .Car-Card img:hover {
-  display: absolute;
   box-shadow: 2px 2px 5px 5px black;
-  height: 42vh;
-  width: 40vw;
+  transform: scale(1.1);
 }
-.Car-Card p {
-  position: absolute;
-  top: 75%;
+
+.make {
+  position: relative;
+  top: -20%;
+
   left: 50%;
   font-size: 30px;
   transform: translate(-50%, -50%);
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
+}
+
+
+.column1 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin: 10px 5px 15px 10px;
+}
+.column2 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin: 10px 10px 15px 5px;
+}
+.signinForm {
+margin: 20% 20% 20%;
+  border-radius: 5%;
+  background:
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+.signin label {
+  color: beige;
+}
+.input-wrapper {
+  margin-top: 1vh;
+} 
+.signin input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.signin h3 {
+  text-align: center;
+  color: beige;
+  padding-top: 2vh;
+}
+.signinButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .comment-form {
@@ -302,4 +368,5 @@ position: relative;
   transition: 0.6s;
   transform: scale(1.06);
 }
+
 

@@ -28,10 +28,11 @@ const Register = () => {
   }
 
   return (
-    <div className="signin col">
+    <div className="signin">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
+        <form className="signinForm" onSubmit={handleSubmit}>
           <div className="input-wrapper">
+            <h3>Register</h3>
             <label htmlFor="userName">Username</label>
             <input
               onChange={handleChange}
@@ -74,15 +75,17 @@ const Register = () => {
               required
             />
           </div>
-          <button
+          <div className='signinButton'>
+          <button className='signinButton'
             disabled={
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
-            }
-          >
+              }
+              >
             Sign In
           </button>
+          </div>
         </form>
       </div>
     </div>
