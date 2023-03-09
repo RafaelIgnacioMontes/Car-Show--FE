@@ -49,11 +49,11 @@ const CarDetails = ({ user }) => {
         <div className="thecar">
           <img
             src={carDetails?.image}
-            alt={'car image'}
+            alt={'car'}
             className="picture"
           ></img>
           <div className="fontbackground">
-            <p>Owner: {carDetails?.owner.userName}</p>
+            <p>Owner: {carDetails?.owner?.userName}</p>
           </div>
           <div className="fontbackground">
             <p>Make: {carDetails?.make}</p>
@@ -70,17 +70,17 @@ const CarDetails = ({ user }) => {
           <div className="fontbackground">
             <p>VIN: {carDetails?.vin}</p>
           </div>
-          <div className="commentsedit">
-            <h3>Comments</h3>
+          <div class="commentsedit">
+            <h3 class="commentTxt">Comments</h3>
             {carDetails.comments.map((comment) => (
-              <div>
+              <div class="commentSection">
                 {comment.car.userName}:{comment.content}
                 {user?.id === comment?.userId && (
                   <div>
-                    <button onClick={(e) => deleteComment(e, comment.id)}>
+                    <button class="commentDelete-btn" onClick={(e) => deleteComment(e, comment.id)}>
                       Delete
                     </button>
-                    <button onClick={() => clicky()}>Update</button>
+                    <button class="updateComment-btn" onClick={() => clicky()}>Update</button>
                   </div>
                 )}
                 <div>
