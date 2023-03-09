@@ -76,10 +76,10 @@ header nav a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 50vh;
-  width: 40vw;
+  height: 40vh;
+  width: 35vw;
   border-radius: 40%;
-  padding-top: 8vh;
+  padding-top: 5vh;
   padding-bottom: 8vh;
 }
 .team {
@@ -147,4 +147,42 @@ margin-right: 10%;
   flex-direction: column;
   flex-basis: 50%;
   margin: 10px 10px 15px 5px;
+}
+.signinForm {
+margin: 20% 20% 20%;
+  border-radius: 5%;
+  background:
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+.signin label {
+  color: beige;
+}
+.input-wrapper {
+  margin-top: 1vh;
+} 
+.signin input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.signin h3 {
+  text-align: center;
+  color: beige;
+  padding-top: 2vh;
+}
+.signinButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }

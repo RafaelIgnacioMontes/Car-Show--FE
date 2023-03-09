@@ -20,10 +20,11 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
-    <div className="signin col">
+    <div className="signin">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
+        <form className="signinForm" onSubmit={handleSubmit}>
           <div className="input-wrapper">
+            <h3>Sign In</h3>
             <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
@@ -44,9 +45,11 @@ const SignIn = ({ setUser }) => {
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
-            Sign In
+          <div className='signinButton'>
+          <button className='signinButton' disabled={!formValues.email || !formValues.password}>
+            Login
           </button>
+          </div>
         </form>
       </div>
     </div>
