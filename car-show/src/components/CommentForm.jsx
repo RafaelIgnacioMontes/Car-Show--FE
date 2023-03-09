@@ -34,7 +34,9 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmit} className="comment-form">
-        <label htmlFor="content">Comments</label>
+        <label htmlFor="content" className="commenttitle">
+          Comment
+        </label>
         <input
           className="inputfield"
           type="text"

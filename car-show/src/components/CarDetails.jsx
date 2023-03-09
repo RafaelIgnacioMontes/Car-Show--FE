@@ -111,15 +111,7 @@ const CarDetails = ({ user }) => {
                 )}
               </div>
             ))}
-            <div>
-              {showResults && (
-                <UpdateComment
-                  commentId={commentId}
-                  getCarDetails={getCarDetails}
-                  clicky={clicky}
-                />
-              )}
-            </div>
+            <div></div>
           </div>
           <div>{user ? userOptions : publicOptions}</div>
         </div>
