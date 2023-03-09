@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const Car = ({ carList }) => {
+
   return (
   <div className='car'>
       <h1 className="Title"> Car Collection </h1>
@@ -27,7 +28,7 @@ const Car = ({ carList }) => {
           index % 2 != 0 && (
             <div className="Car-Card2">
                 <Link to={`/CarDetails/${cars.id}`}>
-                  <img src={cars.image} alt="car image" />
+                  <img src={cars.image} alt="car" />
                 </Link>
                 <p className="make">
                   {cars.make} {cars.model}

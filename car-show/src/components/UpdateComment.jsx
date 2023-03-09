@@ -40,9 +40,11 @@ const UpdateComment = ({ comment, getCarDetails, token, clicky }) => {
           onChange={handleChangeUpdate}
           // value={updateComment.content}
         />
+        <div class="center-submit">
         <button className="submit-button" type="submit">
           Submit
         </button>
+        </div>
       </form>
     </div>
   )
