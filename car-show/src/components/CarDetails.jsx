@@ -18,7 +18,7 @@ const CarDetails = ({ user }) => {
     setCarDetails(carDeets.data)
     setIsLoaded(true)
   }
-  console.log(carDetails)
+
   const deleteComment = async (e, commentId) => {
     e.preventDefault()
     await Client.delete(`http://localhost:3001/comment/delete/${commentId}`)
@@ -39,6 +39,12 @@ const CarDetails = ({ user }) => {
       </div>
     )
   }
+  let commentId = carDetails?.comments?.map((comment)=> {
+    return comment.id
+  })
+
+
+
   const publicOptions = <div></div>
   if (isLoaded) {
     return (
@@ -73,7 +79,6 @@ const CarDetails = ({ user }) => {
           <div class="commentsedit">
             <h3 class="commentTxt">Comments</h3>
             {carDetails.comments.map((comment) => (
-
               <div>
                 {comment.car.userName}: {comment.content}
 
@@ -85,18 +90,17 @@ const CarDetails = ({ user }) => {
                     <button class="updateComment-btn" onClick={() => clicky()}>Update</button>
                   </div>
                 )}
-                <div>
-                  <div></div>
+              </div>
+            ))}
+          <div>
                   {showResults && (
                     <UpdateComment
-                      comment={comment}
+                      commentId={commentId}
                       getCarDetails={getCarDetails}
                       clicky={clicky}
                     />
                   )}
                 </div>
-              </div>
-            ))}
           </div>
           <div>{user ? userOptions : publicOptions}</div>
         </div>
