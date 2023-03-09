@@ -10,7 +10,7 @@ const Car = ({ carList }) => {
           <Link to={`/CarDetails/${cars.id}`}>
             <img src={cars.image} alt="car image" />
           </Link>
-          <p className="make">
+          <p className=''>
             {cars.make} {cars.model}
           </p>
         </div>

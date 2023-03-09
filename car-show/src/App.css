@@ -102,27 +102,29 @@ section img {
 .Car-Card{
   position: relative;
   text-align: center;
-  
+  display: grid;
+  grid-template-columns: 45% 45%;
+  text-align: center;
+  margin: 0px 0px 5vw 5vw;
 }
 .Car-Card img {
   object-fit: cover;
-  height: 50vh;
+  height: 40vh;
   width: 35vw;
   border-radius: 10%;
 }
 .Car-Card img:hover {
   display: absolute;
   box-shadow: 2px 2px 5px 5px black;
-  height: 42vh;
-  width: 40vw;
+transform: scale(1.1);
 }
 .Car-Card p {
-position: absolute;
+/* position: absolute;
   top: 75%;
   left: 50%;
   font-size: 30px;
   transform: translate(-50%, -50%);
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
+    -1px -1px 0 #000; */
 }
