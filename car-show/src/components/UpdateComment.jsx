@@ -30,7 +30,7 @@ const UpdateComment = ({ comment, getCarDetails, token, clicky }) => {
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmitUpdate} className="comment-form">
-        <label htmlFor="content">Comments</label>
+        <label htmlFor="content">Update Your Comment</label>
         <textarea
           type="text"
           id="content"
