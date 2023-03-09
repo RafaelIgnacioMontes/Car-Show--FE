@@ -32,16 +32,17 @@ const User = ({ user, userCarList, getUsersCars }) => {
             <p className="year">Year Built: {cars?.year}</p>
             <p className="vin">VIN: {cars?.vin}</p>
             <p className="color">Color: {cars?.color}</p>
-            <button onClick={(e) => deleteCar(e, cars.id)}>Delete</button>
 
-          <div class=""></div>  
-        <button onClick={addCar} className="add-car">
-          Add Car
-        </button>
+          <div> 
+        <button class="deleteCar-btn" onClick={(e) => deleteCar(e, cars.id)}>Delete</button>
+        </div> 
           </div>
         ))}
       </div>
       <section>
+      <button class="addCar-btn" onClick={addCar} >
+          Add Car
+        </button>
         {addingCar && (
           <CarForm
             user={user}
