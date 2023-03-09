@@ -28,6 +28,8 @@ const Register = () => {
   }
 
   return (
+    <div className='signinPage'>
+
     <div className="signin">
       <div className="card-overlay centered">
         <form className="signinForm" onSubmit={handleSubmit}>
@@ -41,7 +43,7 @@ const Register = () => {
               placeholder="Username"
               value={formValues.userName}
               required
-            />
+              />
           </div>
           <div className="input-wrapper">
             <label htmlFor="email">Email</label>
@@ -52,7 +54,7 @@ const Register = () => {
               placeholder="example@example.com"
               value={formValues.email}
               required
-            />
+              />
           </div>
 
           <div className="input-wrapper">
@@ -63,7 +65,7 @@ const Register = () => {
               name="password"
               value={formValues.password}
               required
-            />
+              />
           </div>
           <div className="input-wrapper">
             <label htmlFor="confirmPassword">Confirm Password</label>
@@ -73,7 +75,7 @@ const Register = () => {
               name="confirmPassword"
               value={formValues.confirmPassword}
               required
-            />
+              />
           </div>
           <div className='signinButton'>
           <button className='signinButton'
@@ -89,6 +91,7 @@ const Register = () => {
         </form>
       </div>
     </div>
+  </div>
   )
 }
 

@@ -35,6 +35,7 @@ const CarForm = ({ user, getUsersCars, userCarList }) => {
 
   return (
     <div className="car-form-container">
+      <div className='carForm'>
       <form onSubmit={handleSubmit} className="car-form">
         <label htmlFor="make">Make: </label>
         <input
@@ -42,28 +43,28 @@ const CarForm = ({ user, getUsersCars, userCarList }) => {
           id="make"
           onChange={handleChange}
           value={formState.make}
-        />
+          />
         <label htmlFor="model">Model: </label>
         <input
           type="text"
           id="model"
           onChange={handleChange}
           value={formState.model}
-        />
+          />
         <label htmlFor="year">Year: </label>
         <input
           type="text"
           id="year"
           onChange={handleChange}
           value={formState.year}
-        />
+          />
         <label htmlFor="vin">VIN Number: </label>
-        <textarea
+        <input
           type="text"
           id="vin"
           onChange={handleChange}
           value={formState.vin}
-        />
+          />
         <label htmlFor="image">
           Image URL: 
         </label>
@@ -72,18 +73,19 @@ const CarForm = ({ user, getUsersCars, userCarList }) => {
           id="image"
           onChange={handleChange}
           value={formState.image}
-        />
+          />
         <label htmlFor="color">Car Color: </label>
         <input
           type="text"
           id="color"
           onChange={handleChange}
           value={formState.color}
-        />
-        <button className="submit-button" type="submit">
+          />
+        <button className="carForm-button" type="submit">
           Submit
         </button>
       </form>
+      </div>
     </div>
   )
 }

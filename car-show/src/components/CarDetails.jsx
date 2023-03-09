@@ -53,7 +53,7 @@ const CarDetails = ({ user }) => {
             className="picture"
           ></img>
           <div className="fontbackground">
-            <p>Owner: {carDetails?.owner.userName}</p>
+            <p>Owner: {carDetails?.owner?.userName}</p>
           </div>
           <div className="fontbackground">
             <p>Make: {carDetails?.make}</p>
@@ -74,7 +74,7 @@ const CarDetails = ({ user }) => {
             <h3>Comments</h3>
             {carDetails.comments.map((comment) => (
               <div>
-                {comment.car.userName}:{comment.content}
+                {comment.car.userName}: {comment.content}
                 {user?.id === comment?.userId && (
                   <div>
                     <button onClick={(e) => deleteComment(e, comment.id)}>

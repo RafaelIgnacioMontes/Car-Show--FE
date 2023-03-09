@@ -20,6 +20,8 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
+    <div className='signinPage'>
+
     <div className="signin">
       <div className="card-overlay centered">
         <form className="signinForm" onSubmit={handleSubmit}>
@@ -33,7 +35,7 @@ const SignIn = ({ setUser }) => {
               placeholder="example@example.com"
               value={formValues.email}
               required
-            />
+              />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
@@ -43,7 +45,7 @@ const SignIn = ({ setUser }) => {
               name="password"
               value={formValues.password}
               required
-            />
+              />
           </div>
           <div className='signinButton'>
           <button className='signinButton' disabled={!formValues.email || !formValues.password}>
@@ -53,6 +55,7 @@ const SignIn = ({ setUser }) => {
         </form>
       </div>
     </div>
+  </div>
   )
 }
 
