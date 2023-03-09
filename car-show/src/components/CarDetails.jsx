@@ -7,12 +7,13 @@ import Client from '../services/api'
 
 const CarDetails = ({ user }) => {
   let { id } = useParams()
-  // const [showResults, setShowResults] = useState(false)
-  // const clicky = () => {
-  //   setShowResults((current) => !current)
-  // }
+  const [showResults, setShowResults] = useState(false)
+  const clicky = () => {
+    setShowResults((current) => !current)
+  }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
+  const [updating, setUpdating] = useState(false)
 
   const getCarDetails = async () => {
     const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
@@ -26,7 +27,7 @@ const CarDetails = ({ user }) => {
   }
   useEffect(() => {
     getCarDetails()
-  }, [user])
+  }, [])
 
   let userOptions
   if (user) {
@@ -49,29 +50,33 @@ const CarDetails = ({ user }) => {
           {carDetails.make} {carDetails.model}
         </h1>
         <div className="carcard">
-          <img src={carDetails.image} alt={'car image'}></img>
-          <p>Make: {carDetails.make}</p>
-          <p>Model: {carDetails.model}</p>
-          <p>Year: {carDetails.year}</p>
-          <p>Color: {carDetails.color}</p>
-          <p>VIN: {carDetails.vin}</p>
+          <img src={carDetails?.image} alt={'car image'}></img>
+          <p>Make: {carDetails?.make}</p>
+          <p>Model: {carDetails?.model}</p>
+          <p>Year: {carDetails?.year}</p>
+          <p>Color: {carDetails?.color}</p>
+          <p>VIN: {carDetails?.vin}</p>
           <div>
             <h5>Comments</h5>
             {carDetails.comments.map((comment) => (
               <div>
                 {comment.car.userName}:{comment.content}
                 {user?.id === comment?.userId && (
+                  <div>
                   <button onClick={(e) => deleteComment(e, comment.id)}>
                     Delete
                   </button>
+                  <button onClick={()=> clicky()}>Update</button>
+                  </div>
                 )}
                 <div>
-                  {user?.id === comment?.userId && (
+                  {showResults && (
                     <UpdateComment
-                      comment={comment}
-                      getCarDetails={getCarDetails}
+                    comment={comment}
+                    getCarDetails={getCarDetails}
+                    clicky={clicky}
                     />
-                  )}
+                    )}
                 </div>
               </div>
             ))}

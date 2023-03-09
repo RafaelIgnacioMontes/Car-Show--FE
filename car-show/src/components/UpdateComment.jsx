@@ -3,11 +3,11 @@ import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Client from '../services/api'
 
-const UpdateComment = ({ comment, getCarDetails, token }) => {
+const UpdateComment = ({ comment, getCarDetails, token, clicky }) => {
   console.log(comment)
 
   const [updateComment, setUpdateComment] = useState({
-    content: ''
+    content: comment.content
   })
 
   const handleChangeUpdate = (event) => {
@@ -24,17 +24,19 @@ const UpdateComment = ({ comment, getCarDetails, token }) => {
       updateComment
     )
     getCarDetails()
+    clicky()
   }
 
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmitUpdate} className="comment-form">
-        <label htmlFor="content">Comments</label>
+        <label htmlFor="content">Update Your Comment</label>
         <textarea
           type="text"
           id="content"
           cols="80"
           rows="2"
+          placeholder={comment.content}
           onChange={handleChangeUpdate}
           value={updateComment.content}
         />
