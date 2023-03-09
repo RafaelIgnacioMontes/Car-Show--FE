@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import CarForm from './CarForm'
-import axios from 'axios'
 import Client from '../services/api'
 
 const User = ({ user, userCarList, getUsersCars }) => {
