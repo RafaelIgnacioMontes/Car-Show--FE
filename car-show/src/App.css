@@ -106,7 +106,7 @@ section img {
 }
 .Car-Card img {
   object-fit: cover;
-  height: 40vh;
+  height: 50vh;
   width: 35vw;
   border-radius: 10%;
 }
