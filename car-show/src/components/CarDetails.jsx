@@ -4,8 +4,7 @@ import axios from 'axios'
 import CommentForm from './CommentForm'
 import UpdateComment from './UpdateComment'
 import Client from '../services/api'
-
-const CarDetails = ({ user, userCarList }) => {
+const CarDetails = ({ user }) => {
   let { id } = useParams()
   const [showResults, setShowResults] = useState(false)
   const clicky = () => {
@@ -14,7 +13,6 @@ const CarDetails = ({ user, userCarList }) => {
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
   const [updating, setUpdating] = useState(false)
-
   const getCarDetails = async () => {
     const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
     setCarDetails(carDeets.data)
@@ -28,12 +26,6 @@ const CarDetails = ({ user, userCarList }) => {
   useEffect(() => {
     getCarDetails()
   }, [])
-
-   
-    getCarDetails()
-  }
-  }, [user])
- 
   let userOptions
   if (user) {
     userOptions = (
@@ -47,7 +39,6 @@ const CarDetails = ({ user, userCarList }) => {
     )
   }
   const publicOptions = <div></div>
-
   if (isLoaded) {
     return (
       <div>
@@ -90,7 +81,6 @@ const CarDetails = ({ user, userCarList }) => {
         </div>
       </div>
     )
-    }
-  
   }
+}
 export default CarDetails
