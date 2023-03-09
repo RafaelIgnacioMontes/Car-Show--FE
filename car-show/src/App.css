@@ -208,52 +208,98 @@ section img {
   justify-content: center;
 }
 
-.center {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-button {
-  display: block;
-  width: 14rem;
-  height: 3.5rem;
-  line-height: 40px;
-  font-size: 18px;
-  text-decoration: none;
-  color: #333;
-  border: 2px solid #333;
-  letter-spacing: 2px;
-  text-align: center;
-  position: relative;
-  transition: all 0.4s;
-}
-.picture {
-  background-color: #272626;
-  padding: 5px;
+
+.yourCollectionContainer {
   display: flex;
-  object-fit: scale-down;
-  max-height: fit-content;
-  max-width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.User-Car-Card{
+  position: relative;
+  text-align: center;
+  margin: 10px;
+  /* border-bottom-left-radius: 20px; */
+  /* border-bottom-right-radius: 20px; */
+  border-radius: 20px;
+  background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+  
+}
+.User-Car-Card img {
+  object-fit: cover;
+  height: 50vh;
+  width: 35vw;
   border-radius: 10%;
 }
-Button span {
-  position: relative;
-  z-index: 2;
+.User-Car-Card img:hover {
+  display: absolute;
+  box-shadow: 2px 2px 5px 5px black;
+  height: 42vh;
+  width: 40vw;
 }
-button:after {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: #ff003b;
-  transition: all 0.35s;
+.User-Car-Card p {
+position: relative;
+  /* top: 75%; */
+  left: 50%;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+    
+
 }
-button:hover {
-  color: #fff;
+
+
+
+.deleteCar-btn {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
 }
-button:hover:after {
-  width: 100%;
+
+.deleteCar-btn:hover {
+  filter: brightness(150%);
+  transition: 0.6s;
+  transform: scale(1.06);
 }
+
+.addCar-btn {
+  display: inline-block;
+  text-align: center;
+  background-color: rgb(10, 56, 32);
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.addCar-btn:hover {
+  filter: brightness(150%);
+  transition: 0.6s;
+  transform: scale(1.06);
+}
+
