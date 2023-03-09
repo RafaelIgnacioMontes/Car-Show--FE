@@ -20,9 +20,10 @@ const User = ({ user, userCarList, getUsersCars }) => {
   }, [user])
 
   return (
-    <div>
+
+    <div className="yourCollectionContainer">
       <h1>Your Collection</h1>
-      <div>
+      <div className="yourCollection">
         {userCarList.map((cars) => (
           <div className="User-Car-Card">
             <img src={cars?.image} alt="car image" />
@@ -32,23 +33,15 @@ const User = ({ user, userCarList, getUsersCars }) => {
             <p className="vin">VIN: {cars?.vin}</p>
             <p className="color">Color: {cars?.color}</p>
             <button onClick={(e) => deleteCar(e, cars.id)}>Delete</button>
+
+          <div class=""></div>  
+        <button onClick={addCar} className="add-car">
+          Add Car
+        </button>
           </div>
         ))}
       </div>
       <section>
-
-
-      <div class="center">
-      <button><span>Hover Me!</span></button>
-      </div>
-
-
-
-
-
-        <button onClick={addCar} className="add-car">
-          Add Car
-        </button>
         {addingCar && (
           <CarForm
             user={user}
