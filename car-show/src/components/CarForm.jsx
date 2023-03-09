@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import Home from './Home'
+import Client from '../services/api'
 
 const BASE_URL = `http://localhost:3001/`
 
@@ -27,7 +28,7 @@ const CarForm = ({ user, getUsersCars, userCarList }) => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await axios.post(`${BASE_URL}cars/newcar`, formState)
+    await Client.post(`${BASE_URL}cars/newcar`, formState)
     setFormState(initialState)
     getUsersCars()
   }
