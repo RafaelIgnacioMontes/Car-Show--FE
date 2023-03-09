@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import './App.css'
@@ -12,6 +12,7 @@ import axios from 'axios'
 import CarDetails from './components/CarDetails'
 import ChangePasswordForm from './components/ChangePasswordForm'
 import UserSettings from './components/UserSettings'
+import UpdateComment from './components/UpdateComment'
 
 const App = () => {
   const [userCarList, setUserCarList] = useState([])
@@ -50,6 +51,7 @@ const App = () => {
     const response = await axios.get('http://localhost:3001/cars/all')
     setCarList(response.data)
   }
+
   const getAllComments = async () => {
     const response = await axios.get('http://localhost:3001/comment/all')
     setComments(response.data)
@@ -87,6 +89,8 @@ const App = () => {
               />
             }
           />
+
+          <Route path="/updateComment/" element={<UpdateComment />} />
 
           <Route path="/register/" element={<Register />} />
           <Route path="/signIn/" element={<SignIn setUser={setUser} />} />

@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 
 const Car = ({ carList }) => {
-  return (
+
     <div className='car'>
+
       <h1 className="Title"> Car Collection </h1>
       <div className='generalPage'>
       <div className='Car-Card'>
