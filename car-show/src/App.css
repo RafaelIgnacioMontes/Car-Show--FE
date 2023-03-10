@@ -275,7 +275,7 @@ margin-right: 10%;
   display: flex;
   justify-content: center; 
   margin-bottom: 10px;
-  
+
 }
 .signin{
   display: flex;
@@ -378,12 +378,7 @@ background-size: 20px 20px;
   width: 35vw;
   border-radius: 10%;
 }
-/* .User-Car-Card img:hover {
-  display: absolute;
-  box-shadow: 2px 2px 5px 5px black;
-  height: 42vh;
-  width: 40vw;
-} */
+
 .User-Car-Card p {
 position: relative;
   /* top: 75%; */
@@ -393,11 +388,7 @@ position: relative;
   color: white;
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
-    
-
 }
-
-
 
 .deleteCar-btn {
   display: inline-block;

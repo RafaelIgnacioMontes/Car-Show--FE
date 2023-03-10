@@ -3,10 +3,10 @@ import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Client from '../services/api'
 
-const UpdateComment = ({ commentId, getCarDetails, clicky }) => {
+const UpdateComment = ({ commentId, getCarDetails, content, clicky }) => {
 
   const [updateComment, setUpdateComment] = useState({
-    content: ''
+    content: content
   })
 
   const handleChangeUpdate = (event) => {
@@ -15,7 +15,7 @@ const UpdateComment = ({ commentId, getCarDetails, clicky }) => {
       [event.target.id]: event.target.value
     })
   }
-  
+
   const handleSubmitUpdate = async (event) => {
     event.preventDefault()
     await Client.put(
@@ -35,6 +35,7 @@ const UpdateComment = ({ commentId, getCarDetails, clicky }) => {
           id="content"
           cols="80"
           rows="2"
+          placeholder={content}
           onChange={handleChangeUpdate}
           value={updateComment.content}
         />

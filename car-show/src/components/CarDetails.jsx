@@ -7,9 +7,10 @@ import Client from '../services/api'
 const CarDetails = ({ user }) => {
   let { id } = useParams()
   const [showResults, setShowResults] = useState(false)
+
   const clicky = () => {
-    setShowResults((current) => !current)
-  }
+      setShowResults((current) => !current)
+    }
   const [carDetails, setCarDetails] = useState()
   const [isLoaded, setIsLoaded] = useState(false)
   const [updating, setUpdating] = useState(false)
@@ -42,9 +43,10 @@ const CarDetails = ({ user }) => {
   let commentId = carDetails?.comments?.map((comment)=> {
     return comment.id
   })
-
-
-
+  let content = carDetails?.comments?.map((comments)=> {
+    return comments.content
+  })
+console.log(content)
   const publicOptions = <div></div>
   if (isLoaded) {
     return (
@@ -87,20 +89,21 @@ const CarDetails = ({ user }) => {
                     <button class="commentDelete-btn" onClick={(e) => deleteComment(e, comment.id)}>
                       Delete
                     </button>
-                    <button class="updateComment-btn" onClick={() => clicky()}>Update</button>
+                    <button class="updateComment-btn" onClick={() => clicky()}>Edit</button>
                   </div>
                 )}
-              </div>
-            ))}
-          <div>
+                <div>
                   {showResults && (
                     <UpdateComment
                       commentId={commentId}
+                      content={comment.content}
                       getCarDetails={getCarDetails}
                       clicky={clicky}
                     />
                   )}
                 </div>
+              </div>
+            ))}
           </div>
           <div>{user ? userOptions : publicOptions}</div>
         </div>
