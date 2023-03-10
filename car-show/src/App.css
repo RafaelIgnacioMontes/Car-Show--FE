@@ -659,3 +659,6 @@ section img {
   border-radius: 10%;
 }
 
+.commentsedit {
+  border-bottom-left-radius: 10%;
+}
