@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import axios from 'axios'
-import Home from './Home'
 import Client from '../services/api'
 
 const BASE_URL = `http://localhost:3001/`
