@@ -12,7 +12,11 @@ const Car = ({ carList }) => {
                 index % 2 == 0 && (
                   <div>
                     <Link to={`/CarDetails/${cars.id}`}>
-                      <img src={cars.image} alt="car image" />
+                      <img
+                        src={cars.image}
+                        alt="car image"
+                        className="homepic"
+                      />
                     </Link>
                     <p className="make">
                       {cars.make} {cars.model}
@@ -27,7 +31,7 @@ const Car = ({ carList }) => {
                 index % 2 != 0 && (
                   <div className="Car-Card2">
                     <Link to={`/CarDetails/${cars.id}`}>
-                      <img src={cars.image} alt="car" />
+                      <img src={cars.image} alt="car" className="homepic" />
                     </Link>
                     <p className="make">
                       {cars.make} {cars.model}
