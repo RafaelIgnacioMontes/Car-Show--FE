@@ -3,12 +3,11 @@ import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import Client from '../services/api'
 
-const UpdateComment = ({ comment, getCarDetails, token, clicky }) => {
-  console.log(comment)
-
+const UpdateComment = ({ comment, getCarDetails, clicky, antiClicky }) => {
   const [updateComment, setUpdateComment] = useState({
-    content: comment.content
+    content: ''
   })
+  console.log(comment)
 
   const handleChangeUpdate = (event) => {
     setUpdateComment({
@@ -36,14 +35,17 @@ const UpdateComment = ({ comment, getCarDetails, token, clicky }) => {
           id="content"
           cols="80"
           rows="2"
-          placeholder={comment.content}
           onChange={handleChangeUpdate}
-          // value={updateComment.content}
+          value={updateComment.content}
         />
-        <div class="center-submit">
-        <button className="submit-button" type="submit">
-          Submit
-        </button>
+        <div className="center-submit">
+          <button className="submit-button" type="submit">
+            Submit
+          </button>
+          <button className="cancel-button" onClick={(e) => antiClicky(e)}>
+            {' '}
+            Cancel{' '}
+          </button>
         </div>
       </form>
     </div>
