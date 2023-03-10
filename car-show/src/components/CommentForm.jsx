@@ -33,12 +33,13 @@ const CommentForm = ({ carDetails, user, getCarDetails }) => {
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmit} className="comment-form">
-        <label htmlFor="content">Comments</label>
-        <textarea
+        <label htmlFor="content" className="commenttitle">
+          Comment
+        </label>
+        <input
+          className="inputfield"
           type="text"
           id="content"
-          cols="30"
-          rows="8"
           onChange={handleChange}
           value={formState.content}
         />

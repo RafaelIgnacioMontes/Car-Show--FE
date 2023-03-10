@@ -47,8 +47,8 @@ const SignIn = ({ setUser }) => {
               required
               />
           </div>
-          <div className='signinButton'>
-          <button className='signinButton' disabled={!formValues.email || !formValues.password}>
+          <div className='signInButton'>
+          <button className='signButton' disabled={!formValues.email || !formValues.password}>
             Login
           </button>
           </div>

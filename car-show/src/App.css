@@ -2,16 +2,25 @@ main {
   margin: 0;
 }
 body {
+  background-color: rgba(26, 23, 24, 0.514);
   margin-top: 9vh;
+  background-repeat: no-repeat;
 }
 header {
-  background:
-  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
   background-color: #131313;
   background-size: 20px 20px;
   align-items: center;
@@ -26,8 +35,31 @@ header {
 .wholepage {
   display: flex;
   flex-direction: column;
+
   align-items: center;
 }
+.cool-car-logo {
+  width: 80px;
+  height: fit-content;
+  position: relative;
+  animation-name: mymove;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+}
+@keyframes mymove {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+  100% {
+    transform: scaleX(-1);
+  }
+}
+
 .detailsheader {
   text-align: center;
 }
@@ -50,13 +82,18 @@ header {
     );
   background-color: #131313;
   background-size: 20px 20px;
-  max-width: fit-content;
   max-height: none;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   text-align: center;
 }
+
+.usercomments {
+  color: gold;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
 .thecar p {
   /* background-color: #000; */
   color: gold;
@@ -156,6 +193,18 @@ header nav a {
   max-width: 200vw;
   max-height: 20vh;
 }
+.about {
+  color: gold;
+}
+.rafael-socials {
+  color: gold;
+}
+.clifton-socials {
+  color: gold;
+}
+.mike-socials {
+  color: gold;
+}
 .about-img {
   display: block;
   margin-left: auto;
@@ -184,12 +233,12 @@ section img {
   color: beige;
 }
 
-.Car-Card{
-display: flex;
-flex-direction: row;
-flex-basis: 50%;
-margin-left: 10%;
-margin-right: 10%;
+.Car-Card {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .generalPage {
@@ -224,7 +273,6 @@ margin-right: 10%;
     -1px -1px 0 #000;
 }
 
-
 .column1 {
   display: flex;
   flex-direction: column;
@@ -240,13 +288,20 @@ margin-right: 10%;
 .signinForm {
   margin-top: 25%;
   border-radius: 5%;
-  background:
-  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
   background-color: #131313;
   background-size: 20px 20px;
   padding-left: 10px;
@@ -255,9 +310,13 @@ margin-right: 10%;
 .signin label {
   color: beige;
 }
+.inputfield {
+  width: 500px;
+  height: 100px;
+}
 .input-wrapper {
   margin-top: 1vh;
-} 
+}
 .signin input {
   width: 100%;
   padding: 12px 20px;
@@ -273,11 +332,10 @@ margin-right: 10%;
 }
 .signinButton {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-bottom: 10px;
-
 }
-.signin{
+.signin {
   display: flex;
   align-items: center;
 }
@@ -297,13 +355,20 @@ margin-right: 10%;
   width: 55%;
   margin-top: 5%;
   border-radius: 5%;
-  background:
-  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
   background-color: #131313;
   background-size: 20px 20px;
   padding-left: 10px;
@@ -318,15 +383,37 @@ margin-right: 10%;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
+.thecarbig {
+  justify-content: flex-end;
+  text-align: right;
+}
 .carForm label {
   color: beige;
 }
-
+.dad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .comment-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.commenttitle {
+  color: white;
+  font-size: x-large;
+}
+.carshowbanner {
+  padding-top: 80%;
+  margin-top: 75px;
+  transform: rotate(-90deg);
+  font-size: 15em;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  max-width: fit-content;
 }
 
 .carForm-button {
@@ -346,41 +433,46 @@ margin-right: 10%;
   cursor: pointer;
 }
 
-
 .yourCollectionContainer {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-.User-Car-Card{
+.User-Car-Card {
   position: relative;
   text-align: center;
   margin: 10px;
   /* border-bottom-left-radius: 20px; */
   /* border-bottom-right-radius: 20px; */
-  border-radius: 20px;
-  background:
-linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-background-color: #131313;
-background-size: 20px 20px;
-  
+  border-radius: 10%;
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
+  background-color: #131313;
+  background-size: 20px 20px;
 }
 .User-Car-Card img {
   object-fit: cover;
   height: 50vh;
-  width: 35vw;
+  width: 40vw;
   border-radius: 10%;
 }
 
 .User-Car-Card p {
-position: relative;
+  position: relative;
   /* top: 75%; */
   left: 50%;
   font-size: 30px;
@@ -391,6 +483,21 @@ position: relative;
 }
 
 .deleteCar-btn {
+  display: inline-block;
+  text-align: center;
+  background-color: red;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.cancel-button {
   display: inline-block;
   text-align: center;
   background-color: red;
@@ -432,14 +539,13 @@ position: relative;
   transform: scale(1.06);
 }
 
-
 .commentSection {
   font-size: 25px;
   color: white;
 }
 
 .commentDelete-btn {
-display: inline-block;
+  display: inline-block;
   text-align: center;
   background-color: red;
   padding: 10px;
@@ -494,3 +600,51 @@ display: inline-block;
   font-size: 35px;
   color: white;
 }
+
+
+.detailContext {
+  color: white;
+  font-size: 25px;
+}
+
+.userSettings {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.signinButton {
+  display: inline-block;
+  text-align: center;
+  background-color: green;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.signButton {
+  display: inline-block;
+  text-align: center;
+  background-color: green;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.signinPage {
+  text-align: center;
+}
+
