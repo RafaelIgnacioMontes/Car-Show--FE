@@ -76,7 +76,7 @@ const ChangePasswordForm = ({ user, handleLogOut }) => {
               required
               />
           </div>
-          <button type="submit">Change Password</button>
+          <button className="signinButton"type="submit">Change Password</button>
         </form>
         </div>
       </div>
