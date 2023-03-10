@@ -5,7 +5,7 @@ import Client from '../services/api'
 
 const UpdateComment = ({ comment, getCarDetails, clicky, antiClicky }) => {
   const [updateComment, setUpdateComment] = useState({
-    content: content
+    content: ''
   })
   console.log(comment)
 
@@ -35,7 +35,6 @@ const UpdateComment = ({ comment, getCarDetails, clicky, antiClicky }) => {
           id="content"
           cols="80"
           rows="2"
-          placeholder={content}
           onChange={handleChangeUpdate}
           value={updateComment.content}
         />

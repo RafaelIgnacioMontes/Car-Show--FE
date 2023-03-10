@@ -35,8 +35,6 @@ const CarDetails = ({ user }) => {
     await Client.delete(`http://localhost:3001/comment/delete/${commentId}`)
     getCarDetails()
   }
-  // let commentsId = carDetails.comments.map((comment) => comment.id)
-  // console.log(commentsId)
   useEffect(() => {
     getCarDetails()
   }, [])
