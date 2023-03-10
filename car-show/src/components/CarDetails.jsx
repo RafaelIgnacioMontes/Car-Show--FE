@@ -7,18 +7,22 @@ import Client from '../services/api'
 const CarDetails = ({ user }) => {
   let { id } = useParams()
 
-  const [showResults, setShowResults] = useState(false)
+  const [showResults, setShowResults] = useState(null)
 
   const clicky = (e, commentId) => {
     e.preventDefault()
-    setShowResults((current) => !current)
+    if (!commentId) {
+      setShowResults(null)
+    } else setShowResults(commentId)
+  }
+  const antiClicky = (e) => {
+    e.preventDefault()
+    setShowResults(null)
   }
 
   const [carDetails, setCarDetails] = useState()
 
   const [isLoaded, setIsLoaded] = useState(false)
-
-  const [updating, setUpdating] = useState(false)
 
   const getCarDetails = async () => {
     const carDeets = await axios.get(`http://localhost:3001/cars/car/${id}`)
@@ -48,9 +52,6 @@ const CarDetails = ({ user }) => {
       </div>
     )
   }
-  let commentId = carDetails?.comments?.map((comment) => {
-    return comment.id
-  })
 
   const publicOptions = <div></div>
   if (isLoaded) {
@@ -79,31 +80,32 @@ const CarDetails = ({ user }) => {
           <div className="fontbackground">
             <p>VIN: {carDetails?.vin}</p>
           </div>
-          <div class="commentsedit">
-            <h3 class="commentTxt">Comments</h3>
+          <div className="commentsedit">
+            <h3 className="commentTxt">Comments</h3>
             {carDetails.comments.map((comment) => (
-              <div>
+              <div className="usercomments">
                 {comment.car.userName}: {comment.content}
                 {user?.id === comment?.userId && (
                   <div>
                     <button
-                      class="commentDelete-btn"
+                      className="commentDelete-btn"
                       onClick={(e) => deleteComment(e, comment.id)}
                     >
                       Delete
                     </button>
                     <button
-                      class="updateComment-btn"
+                      className="updateComment-btn"
                       onClick={(e) => clicky(e, comment.id)}
                     >
                       Update
                     </button>
                     <div>
-                      {showResults && (
+                      {comment?.id === showResults && (
                         <UpdateComment
                           clicky={clicky}
                           getCarDetails={getCarDetails}
                           comment={comment}
+                          antiClicky={antiClicky}
                         />
                       )}
                     </div>

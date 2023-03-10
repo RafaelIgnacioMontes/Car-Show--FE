@@ -13,6 +13,7 @@ import CarDetails from './components/CarDetails'
 import ChangePasswordForm from './components/ChangePasswordForm'
 import UserSettings from './components/UserSettings'
 import UpdateComment from './components/UpdateComment'
+import Client from './services/api'
 
 const App = () => {
   const [userCarList, setUserCarList] = useState([])
@@ -22,6 +23,8 @@ const App = () => {
   const [carList, setCarList] = useState([])
 
   const [comments, setComments] = useState([])
+
+  const [commentsId, setCommentsId] = useState()
 
   const handleLogOut = () => {
     setUser(null)
@@ -40,6 +43,12 @@ const App = () => {
       checkToken()
     }
   }, [])
+
+  // const getCommentById = async (id) => {
+  //   const commentsId = await axios.get(`http://localhost:3001/comment/${id}`)
+  //   setCommentsId(commentsId)
+  // }
+
   const getUsersCars = async () => {
     if (user !== null) {
       const cars = await axios.get(`http://localhost:3001/cars/user/${user.id}`)
