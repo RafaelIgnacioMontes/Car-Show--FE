@@ -35,7 +35,6 @@ header {
 .wholepage {
   display: flex;
   flex-direction: column;
-
   align-items: center;
 }
 .cool-car-logo {
@@ -86,6 +85,7 @@ header {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 75%;
 }
 
 .usercomments {
@@ -470,12 +470,7 @@ section img {
   width: 40vw;
   border-radius: 10%;
 }
-/* .User-Car-Card img:hover {
-  display: absolute;
-  box-shadow: 2px 2px 5px 5px black;
-  height: 42vh;
-  width: 40vw;
-} */
+
 .User-Car-Card p {
   position: relative;
   /* top: 75%; */
@@ -653,3 +648,6 @@ section img {
   text-align: center;
 }
 
+.picture {
+  border-radius: 10%;
+}

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Client from '../services/api'
 
