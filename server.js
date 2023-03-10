@@ -1,4 +1,3 @@
-async/await
 // Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true })
 
@@ -10,7 +9,7 @@ fastify.get('/', async (request, reply) => {
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen({ port: 8080, host: "0.0.0.0"  })
+    await fastify.listen({ port: 8080, host: '0.0.0.0' })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
