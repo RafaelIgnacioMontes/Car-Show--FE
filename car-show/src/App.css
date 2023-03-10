@@ -605,3 +605,51 @@ section img {
   font-size: 35px;
   color: white;
 }
+
+
+.detailContext {
+  color: white;
+  font-size: 25px;
+}
+
+.userSettings {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.signinButton {
+  display: inline-block;
+  text-align: center;
+  background-color: green;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.signButton {
+  display: inline-block;
+  text-align: center;
+  background-color: green;
+  padding: 10px;
+  width: 100px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px double #cccccc;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.signinPage {
+  text-align: center;
+}
+

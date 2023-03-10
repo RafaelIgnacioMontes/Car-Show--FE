@@ -77,8 +77,8 @@ const Register = () => {
               required
               />
           </div>
-          <div className='signinButton'>
-          <button className='signinButton'
+          <div className='signIInButton'>
+          <button class='signinButton'
             disabled={
               !formValues.email ||
               (!formValues.password &&

@@ -83,7 +83,9 @@ const CarDetails = ({ user }) => {
           <div className="commentsedit">
             <h3 className="commentTxt">Comments</h3>
             {carDetails.comments.map((comment) => (
+
               <div className="usercomments">
+
                 {comment.car.userName}: {comment.content}
                 {user?.id === comment?.userId && (
                   <div>
@@ -111,6 +113,7 @@ const CarDetails = ({ user }) => {
                     </div>
                   </div>
                 )}
+
               </div>
             ))}
             <div></div>
